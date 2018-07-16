@@ -42,29 +42,33 @@ Outline design document
 
 #Tuesday
 
-Start coding
-Complete MVP features
-
 <ul>
+  Complete MVP features
   Landing page
   Check-box for tasks
 </ul>
 
 #Wednesday
 
-Complete usable build
-User testing at end of day
-Diagnose potential bugs
+<ul>
+  Complete usable build
+  User testing at end of day
+  Diagnose potential bugs
+</ul>
 
 #Thursday
 
-Complete all features
-Fix potential bugs
+<ul>
+  Complete all features
+  Fix potential bugs
+</ul>
 
 #Friday 
 
-Polish website
-Fix final bugs
+<ul>
+  Polish website
+  Fix final bugs
+</ul>
 
 
 
