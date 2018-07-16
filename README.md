@@ -46,11 +46,11 @@ Outline design document
 
 ## Tuesday
 
-<ul>
+<li>
   Complete MVP features
   Landing page
   Check-box for tasks
-</ul>
+</li>
 
 ## Wednesday
 
