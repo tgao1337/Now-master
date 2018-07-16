@@ -43,7 +43,8 @@ Outline design document
 #Tuesday
 
 Start coding
-Complete MVP features 
+Complete MVP features
+
 <ul>
   Landing page
   Check-box for tasks
