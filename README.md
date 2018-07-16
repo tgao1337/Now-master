@@ -36,11 +36,11 @@ Task: Text
 
 # Daily Milestones
 
-#Monday
+## Monday
 
 Outline design document
 
-#Tuesday
+## Tuesday
 
 <ul>
   Complete MVP features
@@ -48,7 +48,7 @@ Outline design document
   Check-box for tasks
 </ul>
 
-#Wednesday
+## Wednesday
 
 <ul>
   Complete usable build
@@ -56,14 +56,14 @@ Outline design document
   Diagnose potential bugs
 </ul>
 
-#Thursday
+## Thursday
 
 <ul>
   Complete all features
   Fix potential bugs
 </ul>
 
-#Friday 
+## Friday 
 
 <ul>
   Polish website
