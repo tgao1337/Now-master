@@ -6,13 +6,14 @@ const router = express.Router();
 //index (view all tasks)
 
 router.get('/index', function(req, res, next) {
-  Task.find({}, 'name', (err, rooms) => {
-    if (err) {
-      console.error(err);
-    } else {
-      res.render('index', { tasks });
-    }
-  });
+  if (err) {
+    console.error(err);
+  } else {
+
+    var allTasks = db.collection.tasks
+    console.log(`allTasks: ${allTasks}`);
+    res.render('index', { allTasks });
+  }
 });
 
 //show (Select an individual task)
@@ -31,7 +32,6 @@ router.get('/new', function(req, res, next) {
 
 router.post('/', (req, res) => {
   //Make a new task with the schema
-
   console.log('New task created!');
 
   const task = new Task(req.body);

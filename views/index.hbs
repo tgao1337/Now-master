@@ -1,2 +1,7 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<h1>Tasks:</h1>
+<div align="center">
+  <ul>
+    {{#each allTasks}}
+      <li>{{allTasks.task}}</li>
+    {{/each}}
+</div>
