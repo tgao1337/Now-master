@@ -5,26 +5,44 @@ const router = express.Router();
 
 //index (view all tasks)
 
-router.get('/', (req, res) => {
-  //TODO
+router.get('/index', function(req, res, next) {
+  Task.find({}, 'name', (err, rooms) => {
+    if (err) {
+      console.error(err);
+    } else {
+      res.render('index', { tasks });
+    }
+  });
 });
 
 //show (Select an individual task)
 
-router.get('/:id', (req, res) => {
-  //TODO
-});
+// router.get('/:id', (req, res) => {
+//   //TODO
+// });
 
 //new
 
-router.get('/new', (req, res) => {
-  //TODO
+router.get('/new', function(req, res, next) {
+  res.render('new', {});
 });
 
-//create
+//create a new task
 
 router.post('/', (req, res) => {
-  //TODO
+  //Make a new task with the schema
+
+  console.log('New task created!');
+
+  const task = new Task(req.body);
+  //Save the task
+  task.save((err, task) => {
+    //If there's an error, register it
+    if (err) { console.error(err); }
+
+    //redirect the user back to index
+    return res.redirect('/');
+  });
 });
 
 module.exports = router;
