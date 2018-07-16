@@ -34,6 +34,10 @@ Task: Text
 ## Other
 [Any other frameworks / things we will need? Helpers? Services?]
 
+<ul>
+  Colors: 
+</ul>
+
 # Daily Milestones
 
 ## Monday
