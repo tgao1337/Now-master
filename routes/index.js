@@ -8,6 +8,10 @@ router.get('/', function(req, res, next) {
   res.render('index', { tasks: tasks });
 });
 
+router.get('/index', function(req, res, next) {
+  res.render('index', { tasks: tasks });
+});
+
 router.get('/new', function(req, res, next) {
   res.render('new', { tasks: tasks });
 });
