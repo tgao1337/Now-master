@@ -3,15 +3,15 @@ const Task = require('../models/task');
 
 const router = express.Router();
 
-// index (view all tasks)
+//show a specific task
 
-// router.get('/', (req, res) => {
-//   Task.find({}, 'task', (err, task) => {
-//     if (err) { console.log(err); }
-//
-//     res.render('index', { task: task });
-//   });
-// });
+router.get('/tasks/:id', (req, res) => {
+  Task.findById(req.params.id, (err, task) => {
+    if (err) { console.error(err); }
+
+    res.render('viewtask', { task, taskId: req.params.id });
+  });
+});
 
 // new
 

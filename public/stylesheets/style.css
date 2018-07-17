@@ -25,3 +25,15 @@ body {
   margin-left: 2em;
   margin-top: 1.5em;
 }
+.mdl-ripple {
+  style="width: 103.823px;
+  height: 103.823px;
+  transform: translate(-50%, -50%) translate(18px, 18px);
+}
+.mdl-checkbox__box-outline {
+  transition-duration: 0.25s;
+}
+.mdl-checkbox__ripple-container {
+  transition-duration: 0.2s;
+  opacity: 0.5;
+}
