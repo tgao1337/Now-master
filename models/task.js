@@ -4,8 +4,8 @@ const Schema = mongoose.Schema;
 
 const TaskSchema = new Schema({
   task: { type: String, required: true },
-  estimatedTime: { type: Number, required: false },
-  dueDate: { type: Date, required: false },
+  estimatedTime: { type: Number, required: true },
+  dueDate: { type: Date, required: true },
   objc: { type: String, required: false },
   badc: { type: String, required: false },
   rewar: { type: String, required: false },
