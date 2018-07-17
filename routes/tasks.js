@@ -13,6 +13,32 @@ router.get('/tasks/:id', (req, res) => {
   });
 });
 
+// Render task edit page
+
+router.get('/tasks/:id/edit', (req, res) => {
+  Task.findById(req.params.id, (err, task) => {
+    if (err) { console.error(err); }
+
+    res.render('edit', { task });
+  });
+});
+
+//Update a task (after edits)
+
+router.post('/tasks/:id', (req, res) => {
+  Task.findByIdAndUpdate(req.params.id, req.body).then((task) => {
+
+    res.redirect(`/tasks/${req.params.id}`);
+
+  }).catch((err) => {
+
+    console.error(err);
+
+  });
+});
+
+
+
 // new
 
 router.get('/new', (req, res) => {
