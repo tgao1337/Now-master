@@ -5,25 +5,13 @@ const router = express.Router();
 
 // index (view all tasks)
 
-router.get('/', (req, res) => {
-  Task.find({}, 'task', (err, task) => {
-    if (err) { console.log(err); }
-
-    res.render('index', { task: task });
-  });
-});
-
-// router.get('/', function(req, res, next) {
-//   Task.find({}, 'task', (err, tasks) => {
-//     if (err) {
-//       console.error(err);
-//     } else {
-//       res.render('now/index', { tasks });
-//     }
+// router.get('/', (req, res) => {
+//   Task.find({}, 'task', (err, task) => {
+//     if (err) { console.log(err); }
+//
+//     res.render('index', { task: task });
 //   });
 // });
-
-// show (Select an individual task)
 
 // new
 

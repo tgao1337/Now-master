@@ -1,13 +1,17 @@
+<div class="container-list">
 
-{{#each task as |task|}}
-<table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
-  <thead>
-    <tr>
-      <th class="mdl-data-table__cell--non-numeric">{{task.task}}</th>
-      <th>Estimated Time</th>
-      <th>{{task.dueDate}}</th>
-    </tr>
-  </thead>
+    {{#each task as |task|}}
+    <div class="bullet">
+    <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+      <thead>
+        <tr>
+          <th class="mdl-data-table__cell--non-numeric">{{task.task}}</th>
+          <th>Estimated Time</th>
+          <th>task.dueDate</th>
+        </tr>
+      </thead>
 
-</table>
-{{/each}}
+    </table>
+  </div>
+  {{/each}}
+</div>
