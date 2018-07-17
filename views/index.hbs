@@ -1,2 +1,17 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<div class="container-list">
+
+    {{#each task as |task|}}
+    <div class="bullet">
+    <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+      <thead>
+        <tr>
+          <th class="mdl-data-table__cell--non-numeric">{{task.task}}</th>
+          <th>Estimated Time</th>
+          <th>task.dueDate</th>
+        </tr>
+      </thead>
+
+    </table>
+  </div>
+  {{/each}}
+</div>

@@ -8,9 +8,20 @@
 }
 
 body {
+  padding: 0px;
   margin: 0;
 }
 
 .title {
   font-size: 2em;
+}
+
+.containter-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.bullet {
+  margin-left: 2em;
+  margin-top: 1.5em;
 }
