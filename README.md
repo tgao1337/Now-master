@@ -41,8 +41,8 @@ A user visits our website when they feel overwhelmed from upcoming white-collars
 
 ## Other
 [Any other frameworks / things we will need? Helpers? Services?]
-Colors:
-Font:
+<li>Colors: #949CC2, #D4D6E3, #5B5D71, #FBFBFB, #B5B7C8</li>
+<li>Font:</li>
 
 # Daily Milestones
 
