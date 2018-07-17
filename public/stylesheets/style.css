@@ -25,6 +25,7 @@ body {
   margin-left: 2em;
   margin-top: 1.5em;
 }
+<<<<<<< HEAD
 .mdl-ripple {
   style="width: 103.823px;
   height: 103.823px;
@@ -36,4 +37,16 @@ body {
 .mdl-checkbox__ripple-container {
   transition-duration: 0.2s;
   opacity: 0.5;
+=======
+
+.basealign {
+  display: flex;
+  align-items: baseline;
+
+}
+
+.boldede {
+  font-weight: bold;
+  font-size: 18px;
+>>>>>>> 2a040865eb6f35f96f05d455dea1bb38552f357f
 }
