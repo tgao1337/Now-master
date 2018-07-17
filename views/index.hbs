@@ -1,18 +1,46 @@
 <div class="container-list">
   {{#each task as |task|}}
-    <div class="bullet">
-      <div align="left">
+    <div class="flex">
+      <div class="first" align="left">
           <label for="task-completed">Completed?</label>
           <input type="checkbox" name="completed" class="form-control" id="task-completed">
       </div>
 
-      <div align="center">
+      <div class="second" align="center">
           <a href="/tasks/{{task.id}}" class="mdl-data-table__cell--non-numeric">{{task.task}}</a>
       </div>
 
-      <div align="right">
+      <div class="third" align="right">
         <p>Estimated Time: {{task.dueDate}}</p>
       </div>
     </div>
   {{/each}}
 </div>
+<style>
+  /* .container-list div {
+    width: 33%;
+    text-overflow: ellipsis;
+    margin: 20px;
+  } */
+  .containter-list {
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+    flex-direction: row;
+  }
+  .flex {
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+    flex-direction: row;
+  }
+  .first {
+    width: 33%;
+  }
+  .second {
+    width: 33%;
+  }
+  .third {
+    width: 33%;
+  }
+</style>
