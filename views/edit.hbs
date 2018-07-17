@@ -1,38 +1,38 @@
 <div align="center">
-  <form action="/" method="get"> //need to figure out what type of request to edit or file
+  <form action="/tasks/{{task.id}}" method="post">
     <h3>Edit Task Form</h3>
       <div class="form-group">
         <label for="task-task">Task Name</label>
-        <input type="text" name="task" class="form-control" id="task-task" placeholder="Task Name">
+        <input type="text" name="task" value="{{task.task}}" class="form-control" id="task-task" placeholder="Task Name">
       </div>
 
       <div class="form-group">
-        <label for="task-EstimatedTime">Estimated Time (minutes)</label>
-        <input type="number" name="EstimatedTime" class="form-control" id="task-EstimatedTime" placeholder="EstimatedTime">
+        <label for="task-estimatedTime">Estimated Time (minutes)</label>
+        <input type="number" value="{{task.estimatedTime}}" name="estimatedTime" class="form-control" id="task-estimatedTime" placeholder="EstimatedTime">
       </div>
 
       <div class="form-group">
         <label for="task-dueDate">Due Date</label>
-        <input type="date" name="dueDate" class="form-control" id="task-dueDate" placeholder="Due Date">
+        <input type="date" value="{{task.dueDate}}" name="dueDate" class="form-control" id="task-dueDate" placeholder="Due Date">
       </div>
 
       <div class="form-group">
-        <label id ="task-objective">Learning Objective</label>
-        <input type="text" name="objective" class="form-control" id="task-objective" placeholder="What will you learn from completing this task?">
+        <label id ="task-objc">Learning Objective</label>
+        <input type="text" value="{{task.objc}}" name="objc" class="form-control" id="task-objc" placeholder="What will you learn from completing this task?">
       </div>
           <div class="mdl-tooltip" data-mdl-for="task-objective">What will you learn from completing this task?
           </div>
 
       <div class="form-group">
-        <label id="task-consequence">Bad Consequence</label>
-        <input type="text" name="consequence" class="form-control" id="task-consequence" placeholder="What is a bad consequence from not completing this task?">
+        <label id="task-badc">Bad Consequence</label>
+        <input type="text" value="{{task.badc}}" name="badc" class="form-control" id="task-badc" placeholder="What is a bad consequence from not completing this task?">
       </div>
         <div class="mdl-tooltip" data-mdl-for="task-consequence">What is a bad consequence from not completing this task?
         </div>
 
       <div class="form-group">
-        <label id="task-reward">Instant Reward</label>
-        <input type="text" name="reward" class="form-control" id="task-consequence" placeholder="What is your intant reward from completing this task?">
+        <label id="task-rewar">Instant Reward</label>
+        <input type="text" value="{{task.rewar}}" name="rewar" class="form-control" id="task-rewar" placeholder="What is your intant reward from completing this task?">
       </div>
       <div class="mdl-tooltip" data-mdl-for="task-reward">What is your instant reward from completing this task?
       </div>
