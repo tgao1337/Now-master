@@ -13,10 +13,6 @@ router.get('/', (req, res) => {
   });
 });
 
-// router.get('/index', (req, res, next) => {
-//   res.render('index', { tasks });
-// });
-
 router.get('/new', function(req, res, next) {
   res.render('new', { tasks: tasks });
 });
