@@ -46,11 +46,10 @@ Outline design document
 
 ## Tuesday
 
-<li>
-  Complete MVP features
-  Landing page
-  Check-box for tasks
-</li>
+<li> Complete MVP features </li>
+<li>Landing page</li>
+<li>Check-box for tasks</li>
+
 
 ## Wednesday
 
