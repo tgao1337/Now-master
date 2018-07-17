@@ -3,29 +3,37 @@ const Task = require('../models/task');
 
 const router = express.Router();
 
-//index (view all tasks)
+// index (view all tasks)
 
-router.get('/index', function(req, res, next) {
-  Task.find({}, 'name', (err, rooms) => {
-    if (err) {
-      console.error(err);
-    } else {
-      res.render('index', { tasks });
-    }
+router.get('/', (req, res) => {
+  Task.find({}, 'task', (err, task) => {
+    if (err) { console.log(err); }
+
+    res.render('index', { task: task });
   });
 });
 
-//show (Select an individual task)
-
-// router.get('/:id', (req, res) => {
-//   //TODO
+// router.get('/', function(req, res, next) {
+//   Task.find({}, 'task', (err, tasks) => {
+//     if (err) {
+//       console.error(err);
+//     } else {
+//       res.render('now/index', { tasks });
+//     }
+//   });
 // });
 
-//new
+// show (Select an individual task)
 
-router.get('/new', function(req, res, next) {
+// new
+
+router.get('/new', (req, res) => {
   res.render('new', {});
 });
+//  router.get('/:id', (req, res) => {
+//     //TODO
+// });
+
 
 //create a new task
 
