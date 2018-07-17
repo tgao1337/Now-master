@@ -7,36 +7,42 @@ The website targets individuals who task white-collar tasks longer than 1 hour o
 
 ## Experience
 A user opens the web app... [complete this thought]
-A user visits our website when they feel overwhelmed from upcoming white-collars tasks that require more than 1 hour. The user relieves the feeling of being overwhelmed by breaking down tasks into at least one sub-task and writes down the instant reward and positive outcome when completed the main task. 
+A user visits our website when they feel overwhelmed from upcoming white-collars tasks that require more than 1 hour. The user relieves the feeling of being overwhelmed by breaking down tasks into at least one sub-task and writes down the instant reward and positive outcome when completed the main task.
 
 # Technical
 ## Models
 [What data are we dealing with? What classes will we create for that data?]
-
-Task: Text
-<ul>
-  task: string
-  dueDate: string (for now) --> Date
-
-</ul>
+<li>Form</li>
+<li>task: string</li>
+<li>dueDate: Date</li>
 
 ## Views
 [What custom views do we need to create? Include pictures of your prototypes/sketches!]
-
-<ul>
-  index.hbs: Landing page
-  new.hbs: New task form
-</ul>
+<img src="/Users/yizu/Documents/GitHub/Now/PaperPrototype.jpg" alt="">
+<li>index.hbs: Landing page</li>
+<li>new.hbs: New task form</li>
+<li>layout.hbs: Layout of landing page</li>
+<li>error.hbs: Error page</li>
 
 ## Routes
 [What routes will we need? What will they do?]
 
+<li> Index/Home
+<li> Users
+<li>
+<li>
+<li>
+<li>
+<li>
+<li>
+<li>
+<li>
+<li>
+
 ## Other
 [Any other frameworks / things we will need? Helpers? Services?]
-
-<ul>
-  Colors: 
-</ul>
+Colors:
+Font:
 
 # Daily Milestones
 
@@ -48,31 +54,26 @@ Outline design document
 
 <li> Complete MVP features </li>
 <li>Landing page</li>
+<li>Create dates</li>
+<li>Color palettes</li>
+<li>Completed button</li>
 <li>Check-box for tasks</li>
 
 
 ## Wednesday
 
-<ul>
-  Complete usable build
-  User testing at end of day
-  Diagnose potential bugs
-</ul>
+<li>Complete usable build</li>
+<li>User testing at end of day</li>
+<li>Diagnose potential bugs</li>
 
 ## Thursday
 
-<ul>
-  Complete all features
-  Fix potential bugs
-</ul>
-
-## Friday 
-
-<ul>
-  Polish website
-  Fix final bugs
-</ul>
+<li>Complete all features</li>
+<li>Fix potential bugs</li>
+<li>Add additional features: (Subtasks, rewards)</li>
 
 
+## Friday
 
-
+<li>Polish website</li>
+<li>Fix final bugs</li>
