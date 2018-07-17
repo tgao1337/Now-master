@@ -4,8 +4,12 @@ const Schema = mongoose.Schema;
 
 const TaskSchema = new Schema({
   task: { type: String, required: true },
-  dueDate: { type: String, required: true },
-  // completed: { type: Boolean, required: true, default: 'false'},
+  estimatedTime: { type: Number, required: false },
+  dueDate: { type: Date, required: false },
+  objc: { type: String, required: false },
+  badc: { type: String, required: false },
+  rewar: { type: String, required: false },
+  completed: { type: Boolean, required: false, default: 'false' },
 });
 
 module.exports = mongoose.model('Task', TaskSchema);
