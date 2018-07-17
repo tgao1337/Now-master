@@ -7,7 +7,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', (req, res) => {
-  Task.find({}, 'task', (err, task) => {
+  Task.find({}, (err, task) => {
     if (err) { console.log(err); }
     res.render('index', { task });
   });
