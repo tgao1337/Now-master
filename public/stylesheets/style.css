@@ -21,10 +21,9 @@ body {
   flex-direction: column;
 }
 
-.bullet {
-  margin-left: 2em;
-  margin-top: 1.5em;
-}
+
+
+
 .mdl-ripple {
   style="width: 103.823px;
   height: 103.823px;
@@ -47,6 +46,23 @@ body {
   font-weight: bold;
   font-size: 18px;
 }
-.container-list {
+.tablediv {
   display: flex;
+  justify-content: flex-end;
+}
+
+
+
+.bullet {
+  margin-left: 5em;
+  margin-top: 1.5em;
+  margin-right: 5em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.bullet div {
+  width: 33%;
+  text-overflow: ellipsis;
 }

@@ -1,34 +1,19 @@
 <div class="container-list">
-
-    {{#each task as |task|}}
+  {{#each task as |task|}}
     <div class="bullet">
-    <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
-      <thead>
-        <tr>
-          <!-- <th>
-            <label class="completedlabel mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect mdl-data-table__select mdl-js-ripple-effect--ignore-events is-upgraded" data-upgraded=",MaterialCheckbox,MaterialRipple">
-              <input id="completed" type="checkbox" class="mdl-checkbox__input">
-              <span class="mdl-checkbox__focus-helper"></span>
-              <span class="mdl-checkbox__box-outline">
-                <span class="mdl-checkbox__tick-outline"></span>
-              </span>
-              <span class="mdl-checkbox__ripple-container mdl-js-ripple-effect mdl-ripple--center" data-upgraded=",MaterialRipple">
-                <span class="mdl-ripple is-animating" style="width: 103.823px; height: 103.823px; transform: translate(-50%, -50%) translate(18px, 18px);"></span>
-              </span>
-            </label>
-          </th> -->
-          <th class="form-group">
-            <label for="task-completed">Completed?</label>
-            <input type="checkbox" name="completed" class="form-control" id="task-completed">
-          </th>
-          <th>
-            <a href="/tasks/{{task.id}}" class="mdl-data-table__cell--non-numeric">{{task.task}}</a>
-          </th>
-          <th>Estimated Time: {{task.dueDate}}</th>
-      </thead>
+      <div align="left">
+          <label for="task-completed">Completed?</label>
+          <input type="checkbox" name="completed" class="form-control" id="task-completed">
+      </div>
 
-    </table>
-  </div>
+      <div align="center">
+          <a href="/tasks/{{task.id}}" class="mdl-data-table__cell--non-numeric">{{task.task}}</a>
+      </div>
+
+      <div align="right">
+        <p>Estimated Time: {{task.dueDate}}</p>
+      </div>
+    </div>
   {{/each}}
 </div>
 <script>
