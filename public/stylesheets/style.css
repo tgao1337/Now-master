@@ -14,7 +14,13 @@ body {
   margin: 0;
   color: #5B5D71;
 }
-
+.stars {
+  margin: 0px !important;
+  padding: 0px !important;
+}
+.stars img {
+  margin: 5px;
+}
 .title {
   font-size: 2em;
 }
