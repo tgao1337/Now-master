@@ -14,14 +14,14 @@ router.get('/index', function(req, res, next) {
     }
   });
 });
-
+p
 //show (Select an individual task)
 
 // router.get('/:id', (req, res) => {
 //   //TODO
 // });
 
-//new
+// new
 
 router.get('/new', function(req, res, next) {
   res.render('new', {});
