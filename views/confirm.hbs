@@ -6,19 +6,58 @@
     <div class="mdl-card__supporting-text">
       Are you sure you want to complete this task?
     </div>
-    <form methon="post" action="/completed">
-      <div>
-        <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-2">
-        <input type="checkbox" id="switch-2" name="completed" class="mdl-switch__input">
-        <span class="mdl-switch__label"></span>
+    <form method="post" id="confirmForm" action="/">
+      <input id="confirm-id" type="hidden" value="{{task.id}}">
+      <div align="center">
+        <label align="center" class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-2">
+          <input type="checkbox" value=true id="switch-2" name="completed" class="mdl-switch__input">
+          <span class="mdl-switch__label"></span>
         </label>
       </div>
       <div class="mdl-card__actions mdl-card--border">
-        <button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" type="submit">Confirm</button>
+        <button id="confirmBack" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" type="submit">Back</button>
       </div>
     </form>
   </div>
 </div>
+<script>
+  $("*").click(function(){
+    var checkedBox = document.getElementById('switch-2').checked;
+    if (checkedBox) {
+      document.getElementById("confirmBack").innerHTML="Confirm";
+      document.getElementById("confirmForm").setAttribute('action', "/tasks/{{task.id}}");
+    }
+  });
+// $(function() {
+//   // Run when the document is loaded
+//   $('#confirmForm').submit(function(e){
+//     e.preventDefault(); // This prevents the form from submitting
+//     console.log('Submit!!!!');
+//     const confirmId = $('#confirm-id').val();
+//     console.log('confirm id:'+confirmId);
+//     fetch(`/completed/${confirmId}`, { method: 'post', confirmId: confirmId }).then((success) => {
+//       console.log('success message:'+success);
+//       document.getElementById("confirmForm").setAttribute('action', "/completed");
+//     }).catch((err) => {
+//       console.log(err.message);
+//     });
+//   });
+//
+//
+//
+//
+//   // $('#confirmBack').click(function(e){
+//   //   console.log('Click 1')
+//   // });
+//   //
+//   // $('body').on('click', '#confirmBack', function(e) {
+//   //   console.log('Click 2')
+//   // });
+// });
+
+
+
+</script>
 <style>
   .demo-card-wide.mdl-card {
     width: 512px;
