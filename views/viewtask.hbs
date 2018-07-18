@@ -1,38 +1,44 @@
-<table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
-  <tbody>
-    <tr>
-      <th>Task Name</th>
-      <td>{{task.task}}</td>
-    </tr>
+<div align="center">
+  <div class="container-list">
+    <div>
+      <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+        <tbody>
+          <tr>
+            <th>Task Name</th>
+            <td>{{task.task}}</td>
+          </tr>
 
-    <tr>
-      <th>Estimated Time</th>
-      <td>{{task.estimatedTime}}</td>
-    </tr>
+          <tr>
+            <th>Estimated Time</th>
+            <td>{{task.estimatedTime}}</td>
+          </tr>
 
-    <tr>
-      <th>Due Date</th>
-      <td>{{task.dueDate}}</td>
-    </tr>
+          <tr>
+            <th>Due Date</th>
+            <td>{{task.dueDate}}</td>
+          </tr>
 
-    <tr>
-      <th>Learning Objective</th>
-      <td>{{task.objc}}</td>
-    </tr>
+          <tr>
+            <th>Learning Objective</th>
+            <td>{{task.objc}}</td>
+          </tr>
 
-      <tr>
-        <th>Bad Consequence</th>
-        <td>{{task.badc}}</td>
-      </tr>
+          <tr>
+            <th>Bad Consequence</th>
+            <td>{{task.badc}}</td>
+          </tr>
 
-      <tr>
-        <th>Instant Reward</th>
-        <td>{{task.rewar}}</td>
-      </tr>
-  </tbody>
-</table>
-
-<div class="container">
-  <div class="text-center">
-      <a href="tasks/{{task.id}}/edit" type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Edit Task</a>
+          <tr>
+            <th>Instant Reward</th>
+            <td>{{task.rewar}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div>
+      <div class="text-center">
+        <a href="/tasks/{{task.id}}/edit" type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Edit Task</a>
+      </div>
+    </div>
   </div>
+</div>
