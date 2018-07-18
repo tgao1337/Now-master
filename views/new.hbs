@@ -20,9 +20,9 @@
         </div>
       </div>
       <div>
-        <div class="form-group">
-          <label for="task-dueDate">Due Date</label>
-          <input type="date" name="dueDate" class="form-control" id="task-dueDate" placeholder="Due Date">
+        <div>
+          <label for="1datepicker">Due Date</label>
+          <input type="date" name="dueDate" class="form-control" id="1datepicker" aria-label="Use the arrow keys to pick a date">
         </div>
       </div>
       <div>
@@ -51,6 +51,29 @@
           <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Submit</button>
         </div>
       </div>
+
+
+
     </div>
   </form>
 </div>
+
+
+
+
+
+<label for="datepicker">Date:</label>
+<br>
+<input type="text" id="datepicker">
+
+<script src="pikaday.js"></script>
+<script>
+var picker = new Pikaday(
+  {
+    field: document.getElementById('datepicker'),
+    firstDay: 1,
+    minDate: new Date(),
+    maxDate: new Date(2020, 12, 31),
+    yearRange: [2000,2020]
+  });
+</script>
