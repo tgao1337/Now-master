@@ -3,6 +3,7 @@ const Task = require('../models/task');
 
 const router = express.Router();
 
+var stars = 0;
 //show a specific task
 
 router.get('/tasks/:id', (req, res) => {
@@ -76,7 +77,22 @@ router.post('/tasks/:id', (req, res) => {
   });
 });
 
+//tasks delete page
 
+router.get('/tasks/:id/delete', (req, res) => {
+  Task.findById(req.params.id, (err, task) => {
+    if (err) { console.error(err); }
+    res.render('delete', { task, taskId: req.params.id });
+  });
+});
+
+router.post('/deleted', (req, res) => {
+  Task.findByIdAndDelete(req.params.id, req.body).then((task) => {
+    res.redirect('/deleted');
+  }).catch((err) => {
+    console.error(err);
+  });
+});
 
 // new
 

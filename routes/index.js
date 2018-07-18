@@ -5,8 +5,17 @@ const Task = require('../models/task');
 
 var router = express.Router();
 
+var stars = 0;
+
 /* GET home page. */
 router.get('/', (req, res) => {
+  Task.find({}, (err, task) => {
+    if (err) { console.log(err); }
+    res.render('index', { task });
+  });
+});
+
+router.get('/deleted', (req, res) => {
   Task.find({}, (err, task) => {
     if (err) { console.log(err); }
     res.render('index', { task });
@@ -21,7 +30,7 @@ router.get('/new', function(req, res, next) {
 });
 
 router.get('/stars', function(req, res, next) {
-  res.render('stars', { tasks: tasks });
+  res.render('stars', { tasks: tasks, stars });
 });
 
 router.use('/tasks', tasks);
