@@ -54,7 +54,10 @@ body {
   justify-content: flex-end;
 }
 
-
+.containter-input {
+  display: flex;
+  flex-direction: column;
+}
 
 .bullet {
   margin-left: 5em;
