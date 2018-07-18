@@ -1,4 +1,4 @@
-.container-header, #navBar {
+.mdl-layout__header-row, #navBar {
   display: flex;
   justify-content: space-between;
   align-items: center;
