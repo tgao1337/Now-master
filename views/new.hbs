@@ -21,9 +21,25 @@
       </div>
       <div>
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" name="estimatedTime" type="number" min="1" max="12" pattern="-?[0-9]*(\.[0-9]+)?" id="task-ddm">
+          <label class="mdl-textfield__label" for="task-ddm">Due Date Month</label>
+          <span class="mdl-textfield__error">Input is not an integer between 1 and 12!</span>
+        </div>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" name="estimatedTime" type="number" min="1" max="31" pattern="-?[0-9]*(\.[0-9]+)?" id="task-ddd">
+          <label class="mdl-textfield__label" for="task-ddm">Due Date Day</label>
+          <span class="mdl-textfield__error">Input is not an integer between 1 and 31!</span>
+        </div>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" name="estimatedTime" type="number" min="2018" max="2999" pattern="-?[0-9]*(\.[0-9]+)?" id="task-ddy">
+          <label class="mdl-textfield__label" for="task-ddy">Due Date Year</label>
+          <span class="mdl-textfield__error">Input 2018 or later!</span>
+        </div>
+
+        <!-- <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
           <label class="mdl-textfield__label" for="task-dueDate">Due Date</label>
           <input type="date" name="dueDate" class="mdl-textfield__input" id="task-dueDate" placeholder="mm/dd/yyyy">
-        </div>
+        </div> -->
       </div>
       <div>
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
