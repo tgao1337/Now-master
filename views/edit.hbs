@@ -1,50 +1,64 @@
 <div align="center">
   <form action="/tasks/{{task.id}}" method="post">
-    <h3>Edit Task Form</h3>
-      <div class="form-group">
-        <label for="task-task">Task Name</label>
-        <input type="text" name="task" value="{{task.task}}" class="form-control" id="task-task" placeholder="Task Name">
-      </div>
+    <form action="/" class="containter-input" method="post">
+      <h3>Edit Task:</h3>
+      <h2>{{task.task}}</h2>
 
-      <div class="form-group">
-        <label for="task-estimatedTime">Estimated Time (minutes)</label>
-        <input type="number" value="{{task.estimatedTime}}" name="estimatedTime" class="form-control" id="task-estimatedTime" placeholder="EstimatedTime">
-      </div>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <span>
+            <input type="text" name="task" value="{{task.task}}" maxlength="50" class="mdl-textfield__input" id="task-task">
+            <label class="mdl-textfield__label" for="task-task">Task Name</label>
+          </span>
+        </div>
 
-      <div class="form-group">
-        <label for="task-dueDate">Due Date</label>
-        <input type="date" value="{{task.dueDate}}" name="dueDate" class="form-control" id="task-dueDate" placeholder="Due Date">
-      </div>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" name="estimatedTime" value="{{task.estimatedTime}}" type="number" min="1" max="450" pattern="-?[0-9]*(\.[0-9]+)?" id="task-EstimatedTime">
+          <label class="mdl-textfield__label" for="task-EstimatedTime">Estimated Time (minutes)</label>
+          <span class="mdl-textfield__error">Input is not an integer between 1 and 450!</span>
 
-      <div class="form-group">
-        <label id ="task-objc">Learning Objective</label>
-        <input type="text" value="{{task.objc}}" name="objc" class="form-control" id="task-objc" placeholder="What will you learn from completing this task?">
-      </div>
-          <div class="mdl-tooltip" data-mdl-for="task-objective">What will you learn from completing this task?
+          <!-- <label for="task-EstimatedTime">Estimated Time (minutes)</label>
+          <input type="number" name="estimatedTime" class="form-control" id="task-EstimatedTime" placeholder="Estimated Time" min="1" max="450" value="15"> -->
+        </div>
+
+        <div class="form-group">
+          <label for="task-dueDate">Due Date</label>
+          <input type="date" name="dueDate" value="{{task.dueDate}}" class="form-control" id="task-dueDate" placeholder="Due Date">
+        </div>
+
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <!-- <label for="task-objective">Learning Objective</label>
+          <input type="text" name="objc" maxlength="280" class="form-control" id="task-objective" placeholder="Objective"> -->
+          <textarea class="mdl-textfield__input" name="objc" value="{{task.objc}}" maxlength="280" type="text" rows= "3" id="task-objective" >{{task.objc}}</textarea>
+          <label class="mdl-textfield__label" for="task-objective">Learning Objective</label>
+          <div class="mdl-tooltip" data-mdl-for="task-objective">What will you learn from completing this task?</div>
+        </div>
+
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <!-- <label for="task-consequence">Bad Consequence</label>
+          <input type="text" name="badc" maxlength="100" class="form-control" id="task-consequence" placeholder="Consequence"> -->
+
+          <input class="mdl-textfield__input" name="badc" value="{{task.badc}}" maxlength="100" type="text" id="task-consequence">
+      <label class="mdl-textfield__label" for="task-consequence">Bad Consequence</label>
+      <div class="mdl-tooltip" data-mdl-for="task-consequence">What is a bad consequence for not completing this task?</div>
+        </div>
+
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <!-- <label for="task-reward">Instant Reward</label>
+          <input type="text" name="rewar" maxlength="80" class="form-control" id="task-consequence" placeholder="Reward"> -->
+
+          <input class="mdl-textfield__input" name="rewar" value="{{task.rewar}}" maxlength="80" type="text" id="task-reward">
+      <label class="mdl-textfield__label" for="task-reward">Instant Reward</label>
+      <div class="mdl-tooltip" data-mdl-for="task-reward">What is your instant reward from completing this task?</div>
+        </div>
+
+        <div class="container-header">
+          <div class="text-left">
+          <button type="save" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Save</button>
           </div>
 
-      <div class="form-group">
-        <label id="task-badc">Bad Consequence</label>
-        <input type="text" value="{{task.badc}}" name="badc" class="form-control" id="task-badc" placeholder="What is a bad consequence from not completing this task?">
-      </div>
-        <div class="mdl-tooltip" data-mdl-for="task-consequence">What is a bad consequence from not completing this task?
+        <div class="text-right">
+            <button type="delete" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Delete</button>
         </div>
-
-      <div class="form-group">
-        <label id="task-rewar">Instant Reward</label>
-        <input type="text" value="{{task.rewar}}" name="rewar" class="form-control" id="task-rewar" placeholder="What is your intant reward from completing this task?">
       </div>
-      <div class="mdl-tooltip" data-mdl-for="task-reward">What is your instant reward from completing this task?
-      </div>
-
-      <div class="container-header">
-        <div class="text-left">
-        <button type="save" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Save</button>
-        </div>
-
-      <div class="text-right">
-          <button type="delete" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Delete</button>
-      </div>
-    </div>
-</div>
-</form>
+    </form>
+  </div>
