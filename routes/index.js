@@ -20,6 +20,10 @@ router.get('/new', function(req, res, next) {
   res.render('new', { tasks: tasks });
 });
 
+router.get('/stars', function(req, res, next) {
+  res.render('stars', { tasks: tasks });
+});
+
 router.use('/tasks', tasks);
 
 module.exports = router;
