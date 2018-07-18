@@ -3,7 +3,7 @@
 </div>
 <div class="container-list">
   {{#each task as |task|}}
-    {{#if taskcomplete}}
+    {{#if task.completed}}
     {{else}}
       <div class="flex">
         <div class="first" align="left">
@@ -12,7 +12,7 @@
           </a>
         </div>
         <div class="second" align="center">
-            <a href="/tasks/{{task.id}}" class="mdl-data-table__cell--non-numeric">{{task.task}}</a>
+          <a href="/tasks/{{task.id}}" class="mdl-button mdl-js-button">{{task.task}}</a>
         </div>
 
         <div class="third" align="right">

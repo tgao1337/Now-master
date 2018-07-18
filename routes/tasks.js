@@ -57,15 +57,21 @@ router.get('/completed', (req, res) => {
 
 //update a task after completed confirmed
 
-router.post('/completed', (req, res) => {
-  console.log('Task updated');
-
+router.post('/tasks/:id', (req, res) => {
+  //console.log('**** Task updated ****');
+  //const { confirmId } = req.body;
+  //console.log(confirmId); // ????
+  //console.log(req.params.id);
+  console.log(req.body);
   Task.findByIdAndUpdate(req.params.id, req.body).then((task) => {
-
-    res.redirect('/completed');
-
+    res.redirect('/tasks/:id');
+    //console.log('Task found!!! ', task);
+    //task.completed = true;
+    //return task.save();
+  //}).then(() => {
+    //console.log('Task saved!!!! ', task);
+    //return res.json(task);
   }).catch((err) => {
-
     console.error(err);
   });
 });
