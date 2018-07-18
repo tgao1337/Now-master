@@ -1,0 +1,34 @@
+<div align="center">
+  <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+    <div class="mdl-card__title">
+      <h2 class="mdl-card__title-text">Confirm Completion of {{task.task}}</h2>
+    </div>
+    <div class="mdl-card__supporting-text">
+      Are you sure you want to complete this task?
+    </div>
+    <form methon="post" action="/completed">
+      <div>
+        <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-2">
+        <input type="checkbox" id="switch-2" name="completed" class="mdl-switch__input">
+        <span class="mdl-switch__label"></span>
+        </label>
+      </div>
+      <div class="mdl-card__actions mdl-card--border">
+        <button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" type="submit">Confirm</button>
+      </div>
+    </form>
+  </div>
+</div>
+<style>
+  .demo-card-wide.mdl-card {
+    width: 512px;
+  }
+  .demo-card-wide > .mdl-card__title {
+    color: #fbfbfb;
+    height: 176px;
+    background: url('https://www.totaralms.com/sites/default/files/blog/course_completion.png') center / cover;
+  }
+  .demo-card-wide > .mdl-card__menu {
+    color: #fff;
+  }
+</style>

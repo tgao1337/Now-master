@@ -10,7 +10,7 @@
 
           <tr>
             <th>Estimated Time</th>
-            <td>{{task.estimatedTime}}</td>
+            <td>{{task.estimatedTime}} minutes</td>
           </tr>
 
           <tr>
@@ -31,6 +31,14 @@
           <tr>
             <th>Instant Reward</th>
             <td>{{task.rewar}}</td>
+          </tr>
+          <tr>
+            <th>Completed</th>
+            {{#if task.completed}}
+              <td>Yes</td>
+            {{else}}
+              <td>No</td>
+            {{/if}}
           </tr>
         </tbody>
       </table>

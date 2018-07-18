@@ -1,10 +1,9 @@
 <div align="center">
-  <h1>Current Tasks to Complete</h1>
+  <h1>Completed Tasks</h1>
 </div>
 <div class="container-list">
   {{#each task as |task|}}
     {{#if taskcomplete}}
-    {{else}}
       <div class="flex">
         <div class="first" align="left">
           <a href="/tasks/{{task.id}}/confirm" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
@@ -22,9 +21,8 @@
     {{/if}}
   {{/each}}
   <div align="center">
-    <a href="/completed" class="lg-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">View Completed Tasks</a>
-  </div>
-</div>
+    <a href="/" class="lg-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">View Ongoing Tasks</a>
+  </div></div>
 <script>
   $("form").click(function(){
     function now() {

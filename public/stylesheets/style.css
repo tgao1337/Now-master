@@ -24,6 +24,11 @@ body {
   background-color: #5B5D71 !important;
   color: #D4D6E3 !important;
 }
+.lg-button {
+  padding: 20px 50px;
+  font-size: 28px;
+  margin: 5px 10px;
+}
 
 
 
