@@ -1,6 +1,23 @@
 <div align="center">
   <h1>Current Tasks to Complete</h1>
 </div>
+<button type="button" id="sss" class="mdl-button" onclick="test()">???</button>
+<script type="text/javascript">
+function test() {
+  function GetFormattedDate() {
+    var todayTime = new Date();
+    var month = format(todayTime .getMonth() + 1);
+    var day = format(todayTime .getDate());
+    var year = format(todayTime .getFullYear());
+    return month + "/" + day + "/" + year;
+  }
+  console.log(GetFormattedDate());
+
+}
+</script>
+<div>
+  <div id="resulte"></div>
+</div>
 <div class="container-list">
   {{#each task as |task|}}
     {{#if taskcomplete}}
@@ -37,6 +54,40 @@
     now();
     setTimeout(wait, 2000);
   });
+
+  $("sss").click(function(){
+    function now() {
+    console.log('dates');
+    }
+    function wait() {
+      document.getElementById("completed").submit();
+      console.log('Wait a second...');
+    }
+    now();
+    setTimeout(wait, 2000);
+  });
+function GetFormattedDate() {
+    const todayTime = new Date();
+    const monthe = format(todayTime.getMonth() + 1);
+    const daye = format(todayTime.getDate());
+    const yeare = format(todayTime.getFullYear());
+    return (monthe + "/" + daye + "/" + yeare);
+}
+
+function myfunctione()
+{
+  const dae = format(GetFormattedDate());
+  const todayTime = new Date();
+  const monthe = format(todayTime.getMonth() + 1);
+  const daye = format(todayTime.getDate());
+  const yeare = format(todayTime.getFullYear());
+  return (monthe + "/" + daye + "/" + yeare);
+  console.log("Current date: " + monthe + "/" + daye + "/" + yeare);
+document.getElementById("resulte").innerHTML = "Current date: " + monthe + "/" + daye + "/" + yeare;
+
+}
+
+document.getElementById('sss').addEventListener('click', myfunctione);
 </script>
 
 <style>
