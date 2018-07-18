@@ -3,7 +3,7 @@
 </div>
 <div class="container-list">
   {{#each task as |task|}}
-    {{#if taskcomplete}}
+    {{#if task.completed}}
       <div class="flex">
         <div class="first" align="left">
           <a href="/tasks/{{task.id}}/confirm" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
@@ -11,7 +11,7 @@
           </a>
         </div>
         <div class="second" align="center">
-            <a href="/tasks/{{task.id}}" class="mdl-data-table__cell--non-numeric">{{task.task}}</a>
+          <a href="/tasks/{{task.id}}" class="mdl-button mdl-js-button">{{task.task}}</a>
         </div>
 
         <div class="third" align="right">

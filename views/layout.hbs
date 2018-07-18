@@ -7,20 +7,37 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <title>Now</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <!-- Material Design icon font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   </head>
-
-  <nav class="container-header">
-    <a href="/">
-      <img src="../images/logo.png" alt="Now" width="110px" height="55px">
-    </a>
-      <div>
-        <a href="/new" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-          + New Task
-        </a>
+  <header>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-tabs">
+    <header id="navBar" class="mdl-layout__header">
+      <div class="mdl-layout__header-row">
+        <!-- Title -->
+        <span class="mdl-layout-title">Now</span>
       </div>
-  </nav>
+      <!-- Tabs -->
+      <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
+        <a href="/" class="mdl-layout__tab">Current Tasks</a>
+        <a href="/completed" class="mdl-layout__tab">Completed Tasks</a>
+        <a href="/stars" class="mdl-layout__tab">Stars</a>
+      </div>
+    </header>
+    <div class="mdl-layout__drawer">
+      <span class="mdl-layout-title">Now</span>
+      <div class="mdl-spinner mdl-js-spinner is-active"></div>
+    </div>
+    <main class="mdl-layout__content">
+      <!-- <div class="mdl-spinner mdl-js-spinner is-active"></div> -->
+    </main>
+  </div>
+  </header>
 
   <body>
+    <div class="spacer"></div>
     {{{body}}}
 
 
