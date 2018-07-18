@@ -15,8 +15,17 @@
           <a href="/tasks/{{task.id}}" class="mdl-button mdl-js-button">{{task.task}}</a>
         </div>
 
+        <script type="text/javascript">
+        window.onload = fordate;
+        function fordate() {
+          var dueDate = new Date({{task.dueDate}});
+          var isoo = dueDate.toISOString();
+          console.log(isoo);
+          document.getElementById("showdate").innerHTML = "Due: " + isoo;
+        }
+        </script>
         <div class="third" align="right">
-          <p>Estimated Time: {{task.dueDate}}</p>
+          <p id="showdate"></p>
         </div>
       </div>
     {{/if}}
