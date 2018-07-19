@@ -15,8 +15,9 @@
   <tbody>
     {{#each task as |task|}}
     {{#if task.completed}}
+    <a href="/tasks/{{task.id}}">
     <tr>
-      <td class="mdl-data-table__cell--non-numeric">{{task.task}}</td>
+      <td class="mdl-data-table__cell--non-numeric"><a href="/tasks/{{task.id}}" class="mdl-button mdl-js-button">{{task.task}}</a></td>
       {{#if task.dueDate}}
       <td>{{task.dueDate}}</td>
       {{else}}
@@ -29,6 +30,7 @@
         </a>
       </td>
     </tr>
+    </a>
     {{/if}}
     {{/each}}
   </tbody>

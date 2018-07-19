@@ -16,19 +16,22 @@
     {{#each task as |task|}}
     {{#unless task.completed}}
     <tr>
-      <td class="mdl-data-table__cell--non-numeric">{{task.task}}</td>
+      <td class="mdl-data-table__cell--non-numeric"><a href="/tasks/{{task.id}}" class="mdl-button mdl-js-button">{{task.task}}</a></td>
       {{#if task.dueDate}}
-      <td>{{task.dueDate}}</td>
+      <td>
+        {{task.dueDate}}
+      </td>
       {{else}}
       <td>unknown</td>
       {{/if}}
       <td>{{task.estimatedTime}} minutes</td>
       <td>
-        <a href="/tasks/{{task.id}}/confirm" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+        <a href="/tasks/{{task.id}}/confirm" class="leftMove mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
            Complete Task
         </a>
       </td>
     </tr>
+
     {{/unless}}
     {{/each}}
   </tbody>
@@ -125,5 +128,8 @@
   }
   #flexcontainer {
     margin: 0px 100px 10px 100px;
+  }
+  .leftMove {
+    text-align: center !important;
   }
 </style>

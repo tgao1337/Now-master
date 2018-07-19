@@ -8,13 +8,13 @@
     </div>
     <form method="post" id="confirmForm" action="/">
       <input id="confirm-id" type="hidden" value="{{task.id}}">
-      <div align="center">
+      <div id="centerPlease" align="center">
         <label align="center" class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-2">
           <input type="checkbox" value=true id="switch-2" name="completed" class="mdl-switch__input">
           <span class="mdl-switch__label"></span>
         </label>
       </div>
-      <div class="mdl-card__actions mdl-card--border">
+      <div style="margin-top: 30px;" class="mdl-card__actions mdl-card--border">
         <button id="confirmBack" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" type="submit">Back</button>
       </div>
     </form>
@@ -69,5 +69,9 @@
   }
   .demo-card-wide > .mdl-card__menu {
     color: #fff;
+  }
+  #centerPlease {
+    position: absolute !important;
+    left: 46.3% !important;
   }
 </style>

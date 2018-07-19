@@ -15,6 +15,9 @@ a {
   background-color: #d13f2b !important;
   color: white !important;
 }
+.mdl-button {
+  text-transform: none !important;
+}
 #superLoad {
   top: 300px !important;
 }
