@@ -13,6 +13,28 @@ var app = express();
 
 var stars = 0;
 
+
+const cron = require('../node_modules/node-cron');
+
+const taskx = cron.schedule('* * * * * *', function(){
+  console.log('running a task every sec');
+
+    var dueDate = new Date();
+    var DateISO8601 = dueDate.toISOString();
+    function plss() {
+document.getElementById("r").innerHTML = '<input type="date" name="dueDate" class="mdl-textfield__input" id="task-dueDate" placeholder="mm/dd/yyyy" min="'+dateiso+'" max="2099-12-31">';
+      // $('#task-dueDate').attr("min", datiso);
+    }
+    plss();
+    console.log(DateISO8601);
+    var datiso = DateISO8601.split(["T"],10);
+    // $('#task-dueDate').html('<input type="date" name="dueDate" class="mdl-textfield__input" id="task-dueDate" placeholder="mm/dd/yyyy" max="2099-12-31">');
+    // // $('#task-dueDate').attr("min", datiso);
+    // document.getElementById("r").innerHTML = '<input type="date" name="dueDate" class="mdl-textfield__input" id="task-dueDate" placeholder="mm/dd/yyyy" min="'+dateiso+'" max="2099-12-31">';
+    console.log('Teet jquery');
+});
+taskx.start();
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
