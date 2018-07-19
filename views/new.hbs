@@ -1,4 +1,25 @@
-<div align="center">
+<script type="text/javascript">
+// const cron = require('node-cron');
+//
+// const task = cron.schedule('1 * * * * *', function(){
+//   console.log('running a task every minute');
+//
+//     var dueDate = new Date();
+//     var DateISO8601 = dueDate.toISOString();
+//
+//     console.log(DateISO8601);
+//     var datiso = DateISO8601.split(["T"],10);
+//     $('#task-dueDate').html('<input type="date" name="dueDate" class="mdl-textfield__input" id="task-dueDate" placeholder="mm/dd/yyyy" max="2099-12-31">');
+//     console.log('Teet jquery');
+
+// });
+function tt() {
+  console.log("WORDS");
+}
+// task.start();
+</script>
+
+<div align="center" onload"tt">
   <form action="/" method="post">
     <div>
       <div>
@@ -21,8 +42,9 @@
       </div>
       <div>
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+
           <label class="mdl-textfield__label" for="task-dueDate">Due Date</label>
-          <input type="date" name="dueDate" class="mdl-textfield__input" id="task-dueDate" placeholder="mm/dd/yyyy" min="2018-01-01">
+          <input type="date" name="dueDate" class="mdl-textfield__input" id="task-dueDate" placeholder="mm/dd/yyyy" max="2099-12-31">
         </div>
       </div>
       <div>

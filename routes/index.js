@@ -3,6 +3,26 @@ const tasks = require('../routes/tasks');
 
 const Task = require('../models/task');
 
+// const cron = require('../node_modules/node-cron');
+//
+// const task = cron.schedule('1,16,31,46 * * * * *', function(){
+//   console.log('running a task every minute');
+//
+//     var dueDate = new Date();
+//     var DateISO8601 = dueDate.toISOString();
+//
+//     console.log(DateISO8601);
+//     var datiso = DateISO8601.split(["T"],10);
+//     // $('#task-dueDate').html('<input type="date" name="dueDate" class="mdl-textfield__input" id="task-dueDate" placeholder="mm/dd/yyyy" max="2099-12-31">');
+//     console.log('Teet jquery');
+//
+// });
+// task.start();
+//
+// cron.schedule('* * * * *', function(){
+//   console.log('running a task every minute');
+// });
+
 var router = express.Router();
 
 var stars = 0;
@@ -11,6 +31,7 @@ var stars = 0;
 router.get('/', (req, res) => {
   Task.find({}, (err, task) => {
     if (err) { console.log(err); }
+    console.log("sssssss");
     res.render('index', { task });
   });
 });
