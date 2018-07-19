@@ -1,6 +1,6 @@
 const express = require('express');
 const tasks = require('../routes/tasks');
-
+const users = require('./users');
 const Task = require('../models/task');
 
 var router = express.Router();
@@ -12,6 +12,11 @@ router.get('/', (req, res) => {
     if (err) { console.log(err); }
     res.render('index', { task });
   }).sort( { urgency: -1 } );
+});
+
+router.get('/login', (req, res) => {
+  console.log('Login screen');
+  res.render('login', {});
 });
 
 //Render confirmation page for clearing completed Tasks

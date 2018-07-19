@@ -164,9 +164,7 @@ router.post('/deleted/:id', (req, res) => {
 router.get('/new', (req, res) => {
   res.render('new', {});
 });
-//  router.get('/:id', (req, res) => {
-//     //TODO
-// });
+
 
 
 //create a new task
