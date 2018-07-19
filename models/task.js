@@ -10,6 +10,10 @@ const TaskSchema = new Schema({
   badc: { type: String, required: true },
   rewar: { type: String, required: true },
   completed: { type: Boolean, required: false, default: 'false' },
+  red: { type: Boolean, required: false, default: 'false'},
+  yellow: { type: Boolean, required: false, default: 'false'},
+  green: { type: Boolean, required: false, default: 'true'},
+  urgency: { type: Number, required: false, default: 1},
 });
 
 module.exports = mongoose.model('Task', TaskSchema);

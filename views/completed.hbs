@@ -17,7 +17,7 @@
     {{#if task.completed}}
     <a href="/tasks/{{task.id}}">
     <tr>
-      <td class="mdl-data-table__cell--non-numeric"><a href="/tasks/{{task.id}}" class="mdl-button mdl-js-button">{{task.task}}</a></td>
+      <td class="mdl-data-table__cell--non-numeric"><a href="/tasks/{{task.id}}" class="urgency-{{task.urgency}} mdl-button mdl-js-button">{{task.task}}</a></td>
       {{#if task.dueDate}}
       <td>{{task.dueDate}}</td>
       {{else}}
@@ -122,5 +122,29 @@
   .fullTable {
     width: 90%;
     margin: 0px 5% 10px 5%;
+  }
+  .urgency-3 {
+    background-color: #f17373;
+  }
+  .urgency-2 {
+    background-color: #eded6d;
+  }
+  .urgency-1 {
+    background-color: #74f27c;
+  }
+  .urgentBox {
+    width: 1px;
+    height: 1px;
+    border-radius: 8px;
+    color: black;
+  }
+  .mdl-button:hover.urgency-3 {
+    background-color: rgba(217,42,42,.2) !important;
+  }
+  .mdl-button:hover.urgency-2 {
+    background-color: rgba(249,252,37,.4) !important;
+  }
+  .mdl-button:hover.urgency-1 {
+    background-color: rgba(75,199,110,.2) !important;
   }
 </style>

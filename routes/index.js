@@ -12,7 +12,7 @@ router.get('/', (req, res) => {
   Task.find({}, (err, task) => {
     if (err) { console.log(err); }
     res.render('index', { task });
-  });
+  }).sort( { urgency: -1 } );
 });
 
 //Render confirmation page for clearing completed Tasks
