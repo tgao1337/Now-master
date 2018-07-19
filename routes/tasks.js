@@ -23,6 +23,54 @@ router.get('/tasks/:id/confirm', (req, res) => {
   });
 });
 
+//undo task Render
+
+router.get('/tasks/:id/undo', (req, res) => {
+  Task.findById(req.params.id, (err, task) => {
+    if (err) { console.error(err); }
+    res.render('undo', { task, taskId: req.params.id });
+  });
+});
+
+//Update a task to Redo
+
+router.post('/undo/:id', (req, res) => {
+  console.log('Redoing task:' + req.params.id);
+  Task.findByIdAndUpdate(req.params.id, { $set: { completed: false } }).then((task) => {
+    res.redirect('/');
+  }).catch((err) => {
+    console.error(err);
+  });
+});
+
+//Render loading screen while undoing tasks
+
+router.get('/undo/:id', (req, res)  => {
+  Task.find({}, (err, task) => {
+    if (err) { console.error(err); }
+    res.render('undoload', { task });
+  });
+});
+
+//Render loading screen while deleting tasks
+
+router.get('/deleted/:id', (req, res)  => {
+  Task.find({}, (err, task) => {
+    if (err) { console.error(err); }
+    res.render('undoload', { task });
+  });
+});
+
+//Clear all completed tasks button
+
+router.post('/deletecompleted', (req, res) => {
+  Task.deleteMany( { completed: true }).then((task) => {
+    res.redirect('/completed');
+  }).catch((err) => {
+    console.error(err);
+  });
+});
+
 // Render task edit page
 
 router.get('/tasks/:id/edit', (req, res) => {
@@ -86,9 +134,11 @@ router.get('/tasks/:id/delete', (req, res) => {
   });
 });
 
-router.post('/deleted', (req, res) => {
+//Update deleted tasks
+
+router.post('/deleted/:id', (req, res) => {
   Task.findByIdAndDelete(req.params.id, req.body).then((task) => {
-    res.redirect('/deleted');
+    res.redirect('/');
   }).catch((err) => {
     console.error(err);
   });

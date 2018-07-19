@@ -9,7 +9,11 @@
   background-color: #D4D6E3 !important;
 }
 a {
-  color: #949CC2 !important;
+  color: #5B5D71 !important;
+}
+.delete-btn {
+  background-color: #d13f2b !important;
+  color: white !important;
 }
 #superLoad {
   top: 300px !important;

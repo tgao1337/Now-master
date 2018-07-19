@@ -25,9 +25,8 @@
         <label class="mdl-textfield__label" for="task-dueDate">Due Date</label>
         <input id="dater" type="date" name="dueDate" value="{{task.dueDate}}" class="mdl-textfield__input" id="task-dueDate" placeholder="Due Date" min="2018-01-01">
       </div>
-    </div>
-    <input type="text" id="datepicker">
-    <div>
+      <div>
+      </div>
       <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
         <textarea class="mdl-textfield__input" name="objc" value="{{task.objc}}" maxlength="280" type="text" rows= "3" id="task-objective" >{{task.objc}}</textarea>
         <label class="mdl-textfield__label" for="task-objective">Learning Objective</label>
@@ -51,9 +50,8 @@
     <div>
       <div class="container-header">
           <button type="save" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Save</button>
-
-          <button type="reset" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Reset</button>
-          <a href="/tasks/{{task.id}}/delete" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Delete</a>
+          <a href="/tasks/{{task.id}}" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Cancel</a>
+          <a href="/tasks/{{task.id}}/delete" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect delete-btn">Delete</a>
       </div>
     </div>
   </form>

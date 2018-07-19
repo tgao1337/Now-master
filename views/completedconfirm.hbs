@@ -1,16 +1,15 @@
 <div align="center">
   <div class="demo-card-wide mdl-card mdl-shadow--2dp">
     <div class="mdl-card__title">
-      <h2 class="mdl-card__title-text">Confirm Deletion of {{task.task}}</h2>
+      <h2 class="mdl-card__title-text">Clear All Completed Tasks</h2>
     </div>
     <div class="mdl-card__supporting-text">
-      Are you sure you want to permanently delete this task?
+      Are you sure you want to clear all your previously completed tasks?
     </div>
     <form method="post" id="confirmForm" action="/">
-      <input id="confirm-id" type="hidden" value="{{task.id}}">
       <div align="center">
         <label align="center" class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-2">
-          <input type="checkbox" value=true id="switch-2" name="delete" class="mdl-switch__input">
+          <input type="checkbox" value=true id="switch-2" name="deletecompleted" class="mdl-switch__input">
           <span class="mdl-switch__label"></span>
         </label>
       </div>
@@ -25,7 +24,7 @@
     var checkedBox = document.getElementById('switch-2').checked;
     if (checkedBox) {
       document.getElementById("confirmBack").innerHTML="Confirm";
-      document.getElementById("confirmForm").setAttribute('action', "/deleted/{{task.id}}");
+      document.getElementById("confirmForm").setAttribute('action', "/deletecompleted");
     }
   });
 // $(function() {
@@ -65,7 +64,7 @@
   .demo-card-wide > .mdl-card__title {
     color: #fbfbfb;
     height: 176px;
-    background: url('https://f4.bcbits.com/img/a2956594353_10.jpg') center / cover;
+    background: url('https://img-aws.ehowcdn.com/877x500p/cache.gettyimages.com/xc/87740179.jpg?v=1&c=EWSAsset&k=2&d=910C62E22B9F47AA888227E0D34EC0B877DA482AA1A196C532B114B6756E9452') center / cover;
   }
   .demo-card-wide > .mdl-card__menu {
     color: #fff;

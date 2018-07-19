@@ -15,14 +15,22 @@ router.get('/', (req, res) => {
   });
 });
 
+//Render confirmation page for clearing completed Tasks
+
+router.get('/deletecompletedconfirm', (req, res) => {
+  res.render('completedconfirm');
+})
+
+router.get('/deletecompleted', (req, res) => {
+  res.render('undoload');
+})
+
 router.get('/deleted', (req, res) => {
   Task.find({}, (err, task) => {
     if (err) { console.log(err); }
     res.render('index', { task });
   });
 });
-
-
 
 
 router.get('/new', function(req, res, next) {

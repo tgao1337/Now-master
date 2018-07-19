@@ -47,10 +47,15 @@
     <div>
 
       &nbsp;
-
+      {{#if task.completed}}
+      <div class="text-center">
+        <a href="/completed" type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Confirm</a>
+      </div>
+      {{else}}
       <div class="text-center">
         <a href="/tasks/{{task.id}}/edit" type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Edit Task</a>
       </div>
+      {{/if}}
     </div>
   </div>
 </div>
