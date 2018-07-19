@@ -1,6 +1,7 @@
 <div align="center">
   <h1>Completed Tasks</h1>
 </div>
+<div id="flexcontainer" align="center">
 <div class="container-list">
   {{#each task as |task|}}
     {{#if task.completed}}
@@ -13,17 +14,27 @@
         <div class="second" align="center">
           <a href="/tasks/{{task.id}}" class="mdl-button mdl-js-button">{{task.task}}</a>
         </div>
-
+        {{#if task.dueDate}}
         <div class="third" align="right">
           <p>Was due at: {{task.dueDate}}</p>
         </div>
+        {{else}}
+        <div class="third" align="right">
+          <p>Was due at: unknown</p>
+        </div>
+        {{/if}}
+
+        <div class="third" align="right">
+          <p>Estimated Time: {{task.estimatedTime}} minutes</p>
+        </div>
       </div>
-    {{else}}
     {{/if}}
   {{/each}}
   <div align="center">
     <a href="/deletecompletedconfirm" class="lg-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect delete-btn">Clear All Completed Tasks</a>
-  </div></div>
+  </div>
+</div>
+</div>
 <script>
   $("form").click(function(){
     function now() {
@@ -58,11 +69,17 @@
   }
   .first {
     width: 33%;
+    text-overflow: ellipsis;
   }
   .second {
     width: 33%;
+    text-overflow: ellipsis;
   }
   .third {
     width: 33%;
+    text-overflow: ellipsis;
+  }
+  #flexcontainer {
+    margin: 0px 100px 10px 100px;
   }
 </style>

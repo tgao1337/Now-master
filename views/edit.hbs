@@ -8,16 +8,16 @@
     <div>
       <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
         <span>
-          <input type="text" name="task" value="{{task.task}}" maxlength="50" class="mdl-textfield__input" id="task-task">
+          <input required type="text" name="task" value="{{task.task}}" maxlength="50" class="mdl-textfield__input" id="task-task">
           <label class="mdl-textfield__label" for="task-task">Task Name</label>
         </span>
       </div>
     </div>
     <div>
       <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-        <input class="mdl-textfield__input" name="estimatedTime" value="{{task.estimatedTime}}" type="number" min="1" max="450" pattern="-?[0-9]*(\.[0-9]+)?" id="task-EstimatedTime">
+        <input required class="mdl-textfield__input" name="estimatedTime" value="{{task.estimatedTime}}" type="number" min="1" max="450" pattern="-?[0-9]*(\.[0-9]+)?" id="task-EstimatedTime">
         <label class="mdl-textfield__label" for="task-EstimatedTime">Estimated Time (minutes)</label>
-        <span class="mdl-textfield__error">Input is not an integer between 1 and 450!</span>
+        <span class="mdl-textfield__error">Please input a number between 1 and 450</span>
       </div>
     </div>
     <div>
@@ -28,21 +28,21 @@
       <div>
       </div>
       <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-        <textarea class="mdl-textfield__input" name="objc" value="{{task.objc}}" maxlength="280" type="text" rows= "3" id="task-objective" >{{task.objc}}</textarea>
+        <textarea required class="mdl-textfield__input" name="objc" value="{{task.objc}}" maxlength="280" type="text" rows= "3" id="task-objective" >{{task.objc}}</textarea>
         <label class="mdl-textfield__label" for="task-objective">Learning Objective</label>
         <div class="mdl-tooltip" data-mdl-for="task-objective">What will you learn from completing this task?</div>
       </div>
     </div>
     <div>
       <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-        <input class="mdl-textfield__input" name="badc" value="{{task.badc}}" maxlength="100" type="text" id="task-consequence">
+        <input required class="mdl-textfield__input" name="badc" value="{{task.badc}}" maxlength="100" type="text" id="task-consequence">
         <label class="mdl-textfield__label" for="task-consequence">Bad Consequence</label>
         <div class="mdl-tooltip" data-mdl-for="task-consequence">What is a bad consequence for not completing this task?</div>
       </div>
     </div>
     <div>
       <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-        <input class="mdl-textfield__input" name="rewar" value="{{task.rewar}}" maxlength="80" type="text" id="task-reward">
+        <input required class="mdl-textfield__input" name="rewar" value="{{task.rewar}}" maxlength="80" type="text" id="task-reward">
         <label class="mdl-textfield__label" for="task-reward">Instant Reward</label>
         <div class="mdl-tooltip" data-mdl-for="task-reward">What is your instant reward from completing this task?</div>
       </div>
