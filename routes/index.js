@@ -5,7 +5,6 @@ const Task = require('../models/task');
 
 var router = express.Router();
 
-var stars = 0;
 
 /* GET home page. */
 router.get('/', (req, res) => {
@@ -37,9 +36,6 @@ router.get('/new', function(req, res, next) {
   res.render('new', { tasks: tasks });
 });
 
-router.get('/stars', function(req, res, next) {
-  res.render('stars', { tasks: tasks, stars });
-});
 
 router.use('/tasks', tasks);
 

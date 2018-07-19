@@ -3,7 +3,6 @@ const Task = require('../models/task');
 
 const router = express.Router();
 
-var stars = 0;
 //show a specific task
 
 router.get('/tasks/:id', (req, res) => {
@@ -22,6 +21,16 @@ router.get('/tasks/:id/confirm', (req, res) => {
     res.render('confirm', { task, taskId: req.params.id });
   });
 });
+
+//render stars
+router.get('/stars', function(req, res, next) {
+  Task.count( { completed: true}).then((stars) => {
+    res.render('stars', { stars });
+  }).catch((err) => {
+    console.error(err);
+  });
+});
+
 
 //undo task Render
 
@@ -111,9 +120,9 @@ router.post('/tasks/:id', (req, res) => {
   //const { confirmId } = req.body;
   //console.log(confirmId); // ????
   //console.log(req.params.id);
-  console.log(req.body);
   Task.findByIdAndUpdate(req.params.id, req.body).then((task) => {
     res.redirect('/tasks/:id');
+
     //console.log('Task found!!! ', task);
     //task.completed = true;
     //return task.save();
