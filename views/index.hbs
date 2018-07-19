@@ -1,6 +1,43 @@
 <div align="center">
   <h1>Current Tasks to Complete</h1>
 </div>
+<table class="fullTable mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+  <thead>
+    <tr>
+      <th class="mdl-data-table__cell--non-numeric">Task</th>
+      <th>Due Date</th>
+      <th>Estimated Time</th>
+      <div align="center">
+        <th>Complete Task</th>
+      </div>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each task as |task|}}
+    {{#unless task.completed}}
+    <tr>
+      <td class="mdl-data-table__cell--non-numeric">{{task.task}}</td>
+      {{#if task.dueDate}}
+      <td>{{task.dueDate}}</td>
+      {{else}}
+      <td>unknown</td>
+      {{/if}}
+      <td>{{task.estimatedTime}} minutes</td>
+      <td>
+        <a href="/tasks/{{task.id}}/confirm" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+           Complete Task
+        </a>
+      </td>
+    </tr>
+    {{/unless}}
+    {{/each}}
+  </tbody>
+</table>
+
+
+<!-- <div align="center">
+  <h1>Current Tasks to Complete</h1>
+</div>
 <div id="flexcontainer" align="center">
 <div width="%60" class="container-list">
   {{#each task as |task|}}
@@ -37,7 +74,7 @@
     <!-- <a href="/completed" class="lg-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">View Completed Tasks</a> -->
   </div>
 </div>
-</div>
+</div> -->
 <script>
   $("form").click(function(){
     function now() {
@@ -81,6 +118,10 @@
   .third {
     width: 33%;
     text-overflow: ellipsis;
+  }
+  .fullTable {
+    width: 90%;
+    margin: 0px 5% 10px 5%;
   }
   #flexcontainer {
     margin: 0px 100px 10px 100px;

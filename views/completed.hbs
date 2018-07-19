@@ -1,7 +1,42 @@
 <div align="center">
   <h1>Completed Tasks</h1>
 </div>
-<div id="flexcontainer" align="center">
+<table class="fullTable mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+  <thead>
+    <tr>
+      <th class="mdl-data-table__cell--non-numeric">Task</th>
+      <th>Previous Due Date</th>
+      <th>Estimated Time</th>
+      <div align="center">
+        <th>Redo Task</th>
+      </div>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each task as |task|}}
+    {{#if task.completed}}
+    <tr>
+      <td class="mdl-data-table__cell--non-numeric">{{task.task}}</td>
+      {{#if task.dueDate}}
+      <td>{{task.dueDate}}</td>
+      {{else}}
+      <td>unknown</td>
+      {{/if}}
+      <td>{{task.estimatedTime}} minutes</td>
+      <td>
+        <a href="/tasks/{{task.id}}/undo" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+           Redo
+        </a>
+      </td>
+    </tr>
+    {{/if}}
+    {{/each}}
+  </tbody>
+</table>
+<div align="center">
+  <a href="/deletecompletedconfirm" class="lg-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect delete-btn">Clear All Completed Tasks</a>
+</div>
+<!-- <div id="flexcontainer" align="center">
 <div class="container-list">
   {{#each task as |task|}}
     {{#if task.completed}}
@@ -34,7 +69,7 @@
     <a href="/deletecompletedconfirm" class="lg-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect delete-btn">Clear All Completed Tasks</a>
   </div>
 </div>
-</div>
+</div> -->
 <script>
   $("form").click(function(){
     function now() {
@@ -80,6 +115,10 @@
     text-overflow: ellipsis;
   }
   #flexcontainer {
-    margin: 0px 100px 10px 100px;
+    margin: 0px 100px 20px 100px;
+  }
+  .fullTable {
+    width: 90%;
+    margin: 0px 5% 10px 5%;
   }
 </style>
