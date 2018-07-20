@@ -1,3 +1,4 @@
+
 <div align="center">
   <form action="/" method="post">
     <div>
@@ -22,7 +23,9 @@
       <div>
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
           <label class="mdl-textfield__label" for="task-dueDate">Due Date</label>
-          <input type="date" name="dueDate" class="mdl-textfield__input" id="task-dueDate" placeholder="mm/dd/yyyy" min="2018-01-01">
+          <!-- <input type="date" name="dueDate" placeholder="mm/dd/yyyy" id="dddd"> -->
+          <!-- <div id="dddd"></div> -->
+          <input type="date" name="dueDate" class="mdl-textfield__input" id="task-dueDate" placeholder="mm/dd/yyyy" max="2099-12-31">
         </div>
       </div>
       <div>
@@ -69,3 +72,5 @@
     </div>
   </form>
 </div>
+
+<script src="js/cal.js" charset="utf-8"></script>
