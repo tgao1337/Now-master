@@ -1,48 +1,50 @@
 # NOW
-Now is a task management website allowing users to record and estimate the time required to complete white-collar task and write out the positive outcome from completing that task.
+Now is a task management website where users estimate the required time to complete a white-collar task, deadline, and write positive and negative consequences for completing that task.
 
 ## Audience
-
-The website targets individuals who task white-collar tasks longer than 1 hour on a daily basis. According to StudyMode, online education company, between 40 to 50% of college students procrastinate because the upcoming tasks feel overwhelming. Now caters to high-school, college and white-collar professionals requires users to break down task into at least one sub-task for more accurate planning. Additionally, users are required to write out an instant reward and positive psychological or professional outcome derived from completing the main task.
+The website targets individuals who task white-collar tasks longer than 1 hour on a daily basis. According to StudyMode, online education company, between 40 to 50% of college students procrastinate because the upcoming tasks feel overwhelming. Now caters to high-school, college and white-collar professionals because it requires users to break down tasks.
+Through our initial surveys, we noticed that many students and professionals answered that guilt spurs them to take action and mitigate procrastination. In Now, users are required to write out positive and negative outcomes depending on the completion of a task.
 
 ## Experience
-A user opens the web app... [complete this thought]
-A user visits our website when they feel overwhelmed from upcoming white-collars tasks that require more than 1 hour. The user relieves the feeling of being overwhelmed by breaking down tasks into at least one sub-task and writes down the instant reward and positive outcome when completed the main task.
+A user visits our website when they feel overwhelmed by upcoming white-collars tasks that require more than 1 hour. The user relieves the feeling of being overwhelmed by breaking down tasks into at least one sub-task and writes down the instant reward and positive outcome when completed the main task.
 
 # Technical
 ## Models
-[What data are we dealing with? What classes will we create for that data?]
-<li>Form</li>
-<li>task: string</li>
-<li>dueDate: Date</li>
+<li>Tasks</li>
+<li>Users</li>
 
 ## Views
-[What custom views do we need to create? Include pictures of your prototypes/sketches!]
 <img src="/Users/yizu/Documents/GitHub/Now/PaperPrototype.jpg" alt="">
-<li>index.hbs: Landing page</li>
+<li>index.hbs: Tasks to complete page</li>
 <li>new.hbs: New task form</li>
-<li>layout.hbs: Layout of landing page</li>
 <li>error.hbs: Error page</li>
+<li>completed.hbs: Completed tasks</li>
+<li>completedconfirm.hbs: Confirmation page for task completion</li>
+<li>confirm.hbs: Confirmation form for task completion </li>
+<li>delete.hbs: Confirmation for deleting one task</li>
+<li>edit.hbs: Edit current task</li>
+<li>error.hbs: Error page</li>
+<li>login.hbs: Log-in page</li>
+<li>viewtask.hbs: View specific task details</li>
 
 ## Routes
 [What routes will we need? What will they do?]
 
-<li> Index/Home
-<li> Users
-<li>
-<li>
-<li>
-<li>
-<li>
-<li>
-<li>
-<li>
-<li>
+Index/Home
+<li> USE http://localhost:3000/</li>
+<li> GET http://localhost:3000/</li>
+
+Users
+<li> GET http://localhost:3000/login</li>
+<li> POST http://localhost:3000/login</li>
+
+Tasks
+<li> GET http://localhost:3000/tasks/task.id</li>
+<li> POST http://localhost:3000/tasks/task.id</li>
 
 ## Other
-[Any other frameworks / things we will need? Helpers? Services?]
-<li>Colors: #949CC2, #D4D6E3, #5B5D71, #FBFBFB, #B5B7C8</li>
-<li>Font:</li>
+
+Used components from Material Design Lite: https://getmdl.io/index.html
 
 # Daily Milestones
 
