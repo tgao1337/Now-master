@@ -1,11 +1,10 @@
 const express = require('express');
 const tasks = require('../routes/tasks');
-
+const users = require('./users');
 const Task = require('../models/task');
 
 var router = express.Router();
 
-var stars = 0;
 
 /* GET home page. */
 router.get('/', (req, res) => {
@@ -13,6 +12,11 @@ router.get('/', (req, res) => {
     if (err) { console.log(err); }
     res.render('index', { task });
   }).sort( { urgency: -1 } );
+});
+
+router.get('/login', (req, res) => {
+  console.log('Login screen');
+  res.render('login', {});
 });
 
 //Render confirmation page for clearing completed Tasks
@@ -37,9 +41,6 @@ router.get('/new', function(req, res, next) {
   res.render('new', { tasks: tasks });
 });
 
-router.get('/stars', function(req, res, next) {
-  res.render('stars', { tasks: tasks, stars });
-});
 
 router.use('/tasks', tasks);
 

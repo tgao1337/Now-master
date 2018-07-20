@@ -23,6 +23,20 @@ router.get('/tasks/:id/confirm', (req, res) => {
   });
 });
 
+//render stars
+router.get('/stars', function(req, res, next) {
+  Task.count( { completed: true}).then((completedTasks) => {
+    var starString = parseInt(completedTasks, 10)
+    if (stars !== starString) {
+    stars += starString;
+    }
+    res.render('stars', { stars });
+  }).catch((err) => {
+    console.error(err);
+  });
+});
+
+
 //undo task Render
 
 router.get('/tasks/:id/undo', (req, res) => {
@@ -37,6 +51,7 @@ router.get('/tasks/:id/undo', (req, res) => {
 router.post('/undo/:id', (req, res) => {
   console.log('Redoing task:' + req.params.id);
   Task.findByIdAndUpdate(req.params.id, { $set: { completed: false } }).then((task) => {
+    stars --;
     res.redirect('/');
   }).catch((err) => {
     console.error(err);
@@ -111,9 +126,9 @@ router.post('/tasks/:id', (req, res) => {
   //const { confirmId } = req.body;
   //console.log(confirmId); // ????
   //console.log(req.params.id);
-  console.log(req.body);
   Task.findByIdAndUpdate(req.params.id, req.body).then((task) => {
     res.redirect('/tasks/:id');
+
     //console.log('Task found!!! ', task);
     //task.completed = true;
     //return task.save();
@@ -149,9 +164,7 @@ router.post('/deleted/:id', (req, res) => {
 router.get('/new', (req, res) => {
   res.render('new', {});
 });
-//  router.get('/:id', (req, res) => {
-//     //TODO
-// });
+
 
 
 //create a new task
