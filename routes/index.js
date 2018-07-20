@@ -11,14 +11,15 @@ var router = express.Router();
 router.use(function(req, res, next) {
   res.locals.title = "Now";
   res.locals.currentUserId = req.session.userId;
-  var currentUser = res.locals.currentUserId;
+  currentUser = res.locals.currentUserId;
+  console.log(`Current User Id Index: ${currentUser}`);
   next();
 });
 
 /* GET home page. */
 router.get('/', auth.requireLogin, (req, res) => {
   Task.find( { owner: currentUser }, (err, task) => {
-    console.log(currentUser);
+    console.log(`INSIDE SCOOP: ${currentUser}`);
     if (err) { console.log(err); }
     res.render('index', { task });
   }).sort( { urgency: -1 } );
