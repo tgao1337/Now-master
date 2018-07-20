@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcrypt'); //Change to bcryptjs for windows (Install bcryptjs)
 const Schema = mongoose.Schema;
 var allUsers = ['takenUsername'];
 
