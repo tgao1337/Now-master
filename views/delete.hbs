@@ -27,6 +27,10 @@
       document.getElementById("confirmBack").innerHTML="Confirm";
       document.getElementById("confirmForm").setAttribute('action', "/deleted/{{task.id}}");
     }
+    if (!checkedBox) {
+      document.getElementById("confirmBack").innerHTML="Back";
+      document.getElementById("confirmForm").setAttribute('action', "/");
+    }
   });
 // $(function() {
 //   // Run when the document is loaded

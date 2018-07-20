@@ -6,13 +6,6 @@ const auth = require('./helpers/auth');
 
 const Star = require('../models/star');
 
-//Use this to generate the first star counter:
- // star.save({ count: 1 }, (err, star) => {
- //    if (err) { console.error(err); }
- //    const star = new Star( { count: 0 } );
- //    console.log(`Stars: ${Star}`);
- //  });
-
 //show a specific task
 
 
@@ -57,7 +50,6 @@ router.get('/tasks/:id/undo', (req, res) => {
 router.post('/undo/:id', (req, res) => {
   console.log('Redoing task:' + req.params.id);
   Task.findByIdAndUpdate(req.params.id, { $set: { completed: false } }).then((task) => {
-    stars --;
     res.redirect('/');
   }).catch((err) => {
     console.error(err);
@@ -85,7 +77,7 @@ router.get('/deleted/:id', (req, res)  => {
 //Clear all completed tasks button
 
 router.post('/deletecompleted', (req, res) => {
-  Task.deleteMany( { completed: true }).then((task) => {
+  Task.deleteMany( { completed: true, owner: currentUser }).then((task) => {
     res.redirect('/completed');
   }).catch((err) => {
     console.error(err);
