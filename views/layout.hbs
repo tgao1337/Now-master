@@ -14,42 +14,43 @@
     <!-- Material Design icon font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   </head>
-  <header>
-    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-tabs">
-    <header id="navBar" class="mdl-layout__header">
-      <div class="mdl-layout__header-row">
-        <!-- Title -->
-        <img src="/images/logo.png" id="logo" width="100px" height="50">
-        <div>
-          <a href="/new" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">+  New Task</a>
-          <!-- <a href="/login" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent delete-btn">Log In</a> -->
-        </div>
-      </div>
-      <!-- Tabs -->
-      <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
-        <a href="/" class="mdl-layout__tab">Current Tasks</a>
-        <a href="/completed" class="mdl-layout__tab">Completed Tasks</a>
-        <a href="/stars" class="mdl-layout__tab">Stars</a>
-      </div>
-    </header>
-    <!-- <div class="mdl-layout__drawer">
-      <span class="mdl-layout-title">Now</span>
-      <div class="mdl-spinner mdl-js-spinner is-active"></div>
-    </div> -->
-    <!-- <main class="mdl-layout__content">
-      <div class="mdl-spinner mdl-js-spinner is-active"></div>
-    </main> -->
-  </div>
-  </header>
-
   <body>
-    <div class="spacer"></div>
-    {{{body}}}
-    <div class="spacer"></div>
+    <div class="mdl-layout mdl-js-layout">
+      <header>
+        <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-tabs">
+        <header id="navBar" class="mdl-layout__header">
+          <div class="mdl-layout__header-row">
+            <!-- Title -->
+            <img src="/images/logo.png" id="logo" width="100px" height="50">
+            <div>
+              {{#if currentUserId}}
+              <a href="/new" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">+  New Task</a>
+              <a href="/logout" style="background-color: #f76a6a !important;"class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent delete-btn">Log Out</a>
+              {{else}}
+              <a href="/login" style="background-color: #949CC2 !important;"class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent delete-btn">Log In</a>
+              <a href="/users/new" style="background-color: #f76a6a !important;" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent delete-btn">Register</a>
+              {{/if}}
+            </div>
+          </div>
+          <!-- Tabs -->
+          <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
+            <a href="/" class="mdl-layout__tab">Current Tasks</a>
+            <a href="/completed" class="mdl-layout__tab">Completed Tasks</a>
+            <a href="/stars" class="mdl-layout__tab">Stars</a>
+          </div>
+        </header>
+      </div>
+      </header>
 
-
-  </body>
-  <!-- Latest compiled and minified CSS -->
+    <main>
+      <div class="spacer"></div>
+      <div id="mainMain">
+      {{{body}}}
+      </div>
+      <div class="spacer"></div>
+    </main>
+  </div>
+</body>
 
 </html>
 <style>
@@ -57,4 +58,20 @@
     position: absolute !important;
     left: 46.3% !important;
   }
+  .spacer {
+    padding: 75px;
+  }
+  #mainMain {
+    position: relative;
+    z-index: 10;
+  }
+  #LoginFail {
+    background-color: #ffb7b9;
+    font-color: darkred;
+    border-color: darkred;
+    border-radius: 8px;
+    width: 320px;
+    margin: 10px;
+  }
+
 </style>

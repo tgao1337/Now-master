@@ -1,10 +1,20 @@
 const express = require('express');
 const Task = require('../models/task');
-
+const db = require('mongodb');
 const router = express.Router();
+const auth = require('./helpers/auth');
 
-var stars = 0;
+const Star = require('../models/star');
+
+//Use this to generate the first star counter:
+ // star.save({ count: 1 }, (err, star) => {
+ //    if (err) { console.error(err); }
+ //    const star = new Star( { count: 0 } );
+ //    console.log(`Stars: ${Star}`);
+ //  });
+
 //show a specific task
+
 
 router.get('/tasks/:id', (req, res) => {
   Task.findById(req.params.id, (err, task) => {
@@ -24,13 +34,9 @@ router.get('/tasks/:id/confirm', (req, res) => {
 });
 
 //render stars
-router.get('/stars', function(req, res, next) {
+router.get('/stars', auth.requireLogin, function(req, res, next) {
   Task.count( { completed: true}).then((completedTasks) => {
-    var starString = parseInt(completedTasks, 10)
-    if (stars !== starString) {
-    stars += starString;
-    }
-    res.render('stars', { stars });
+    res.render('stars', {});
   }).catch((err) => {
     console.error(err);
   });
@@ -110,31 +116,11 @@ router.post('/tasks/:id', (req, res) => {
   });
 });
 
-//Show only completed tasks
-
-router.get('/completed', (req, res) => {
-  Task.find({}, (err, task) => {
-    if (err) { console.log(err); }
-    res.render('completed', { task });
-  });
-});
-
 //update a task after completed confirmed
 
 router.post('/tasks/:id', (req, res) => {
-  //console.log('**** Task updated ****');
-  //const { confirmId } = req.body;
-  //console.log(confirmId); // ????
-  //console.log(req.params.id);
   Task.findByIdAndUpdate(req.params.id, req.body).then((task) => {
     res.redirect('/tasks/:id');
-
-    //console.log('Task found!!! ', task);
-    //task.completed = true;
-    //return task.save();
-  //}).then(() => {
-    //console.log('Task saved!!!! ', task);
-    //return res.json(task);
   }).catch((err) => {
     console.error(err);
   });
