@@ -5,6 +5,9 @@
         <h3>New Task Form</h3>
       </div>
       <div>
+        <input type="hidden" value="{{currentUserId}}" name="owner">
+      </div>
+      <div>
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
           <span>
             <input required type="text" name="task" maxlength="50" class="mdl-textfield__input" id="task-task">

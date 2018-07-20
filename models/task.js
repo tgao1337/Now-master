@@ -14,6 +14,7 @@ const TaskSchema = new Schema({
   yellow: { type: Boolean, required: false, default: 'false'},
   green: { type: Boolean, required: false, default: 'true'},
   urgency: { type: Number, required: false, default: 1},
+  owner: { type: String, required: true },
 });
 
 module.exports = mongoose.model('Task', TaskSchema);
