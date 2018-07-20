@@ -26,6 +26,10 @@
       document.getElementById("confirmBack").innerHTML="Confirm";
       document.getElementById("confirmForm").setAttribute('action', "/deletecompleted");
     }
+    if (!checkedBox) {
+      document.getElementById("confirmBack").innerHTML="Back";
+      document.getElementById("confirmForm").setAttribute('action', "/");
+    }
   });
 // $(function() {
 //   // Run when the document is loaded

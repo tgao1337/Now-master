@@ -33,6 +33,10 @@
       document.getElementById("confirmBack").innerHTML="Confirm";
       document.getElementById("confirmForm").setAttribute('action', "/tasks/{{task.id}}");
     }
+    if (!checkedBox) {
+      document.getElementById("confirmBack").innerHTML="Back";
+      document.getElementById("confirmForm").setAttribute('action', "/");
+    }
   });
 
 // $(function() {

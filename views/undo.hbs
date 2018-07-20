@@ -26,6 +26,10 @@
       document.getElementById("confirmBack").innerHTML="Redo";
       document.getElementById("confirmForm").setAttribute('action', "/undo/{{task.id}}");
     }
+    if (!checkedBox) {
+      document.getElementById("confirmBack").innerHTML="Back";
+      document.getElementById("confirmForm").setAttribute('action', "/tasks/{{task.id}}");
+    }
   });
 // $(function() {
 //   // Run when the document is loaded
