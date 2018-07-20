@@ -28,7 +28,7 @@ router.get('/', auth.requireLogin, (req, res) => {
 //Show only completed tasks
 
 router.get('/completed', auth.requireLogin, (req, res) => {
-  Task.find({}, (err, task) => {
+  Task.find({ owner: currentUser }, (err, task) => {
     if (err) { console.log(err); }
     res.render('completed', { task });
   });
