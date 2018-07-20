@@ -1,81 +1,85 @@
-<div align="center">
-  <h3>Completed Tasks</h3>
-</div>
-<table class="fullTable mdl-data-table mdl-js-data-table mdl-shadow--2dp">
-  <thead>
-    <tr>
-      <th class="mdl-data-table__cell--non-numeric">Task</th>
-      <th>Previous Due Date</th>
-      <th>Estimated Time</th>
-      <div align="center">
-        <th>Redo Task</th>
-      </div>
-    </tr>
-  </thead>
-  <tbody>
+<main class="mdl-layout__content mdl-layout__tab-panel">
+  <div id="ft2" class="page-content">
+
+
+    <div align="center">
+      <h3>Completed Tasks</h3>
+    </div>
+    <table class="fullTable mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+      <thead>
+        <tr>
+          <th class="mdl-data-table__cell--non-numeric">Task</th>
+          <th>Previous Due Date</th>
+          <th>Estimated Time</th>
+          <div align="center">
+            <th>Redo Task</th>
+          </div>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each task as |task|}}
+        {{#if task.completed}}
+        <a href="/tasks/{{task.id}}">
+          <tr>
+            <td class="mdl-data-table__cell--non-numeric"><a href="/tasks/{{task.id}}" class="urgency-{{task.urgency}} mdl-button mdl-js-button">{{task.task}}</a></td>
+            {{#if task.dueDate}}
+            <td>{{task.dueDate}}</td>
+            {{else}}
+            <td>unknown</td>
+            {{/if}}
+            <td>{{task.estimatedTime}} minutes</td>
+            <td>
+              <a href="/tasks/{{task.id}}/undo" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                Redo
+              </a>
+            </td>
+          </tr>
+        </a>
+        {{/if}}
+        {{/each}}
+      </tbody>
+    </table>
+    <div align="center">
+      <a href="/deletecompletedconfirm" class="lg-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect delete-btn">Clear All Completed Tasks</a>
+    </div>
+    <!-- <div id="flexcontainer" align="center">
+    <div class="container-list">
     {{#each task as |task|}}
     {{#if task.completed}}
-    <a href="/tasks/{{task.id}}">
-    <tr>
-      <td class="mdl-data-table__cell--non-numeric"><a href="/tasks/{{task.id}}" class="urgency-{{task.urgency}} mdl-button mdl-js-button">{{task.task}}</a></td>
-      {{#if task.dueDate}}
-      <td>{{task.dueDate}}</td>
-      {{else}}
-      <td>unknown</td>
-      {{/if}}
-      <td>{{task.estimatedTime}} minutes</td>
-      <td>
-        <a href="/tasks/{{task.id}}/undo" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-           Redo
-        </a>
-      </td>
-    </tr>
-    </a>
-    {{/if}}
-    {{/each}}
-  </tbody>
-</table>
+    <div class="flex">
+    <div class="first" align="left">
+    <a href="/tasks/{{task.id}}/undo" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+    Redo Task
+  </a>
+</div>
+<div class="second" align="center">
+  <a href="/tasks/{{task.id}}" class="mdl-button mdl-js-button">{{task.task}}</a>
+</div>
+{{#if task.dueDate}}
+<div class="third" align="right">
+  <p>Was due at: {{task.dueDate}}</p>
+</div>
+{{else}}
+<div class="third" align="right">
+  <p>Was due at: unknown</p>
+</div>
+{{/if}}
+
+<div class="third" align="right">
+  <p>Estimated Time: {{task.estimatedTime}} minutes</p>
+</div>
+</div>
+{{/if}}
+{{/each}}
 <div align="center">
   <a href="/deletecompletedconfirm" class="lg-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect delete-btn">Clear All Completed Tasks</a>
 </div>
-<!-- <div id="flexcontainer" align="center">
-<div class="container-list">
-  {{#each task as |task|}}
-    {{#if task.completed}}
-      <div class="flex">
-        <div class="first" align="left">
-          <a href="/tasks/{{task.id}}/undo" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-            Redo Task
-          </a>
-        </div>
-        <div class="second" align="center">
-          <a href="/tasks/{{task.id}}" class="mdl-button mdl-js-button">{{task.task}}</a>
-        </div>
-        {{#if task.dueDate}}
-        <div class="third" align="right">
-          <p>Was due at: {{task.dueDate}}</p>
-        </div>
-        {{else}}
-        <div class="third" align="right">
-          <p>Was due at: unknown</p>
-        </div>
-        {{/if}}
-
-        <div class="third" align="right">
-          <p>Estimated Time: {{task.estimatedTime}} minutes</p>
-        </div>
-      </div>
-    {{/if}}
-  {{/each}}
-  <div align="center">
-    <a href="/deletecompletedconfirm" class="lg-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect delete-btn">Clear All Completed Tasks</a>
-  </div>
 </div>
 </div> -->
 <script>
   $("form").click(function(){
     function now() {
-    console.log('Click!');
+      console.log('Click!');
     }
     function wait() {
       document.getElementById("completed").submit();
@@ -148,3 +152,5 @@
     background-color: rgba(75,199,110,.2) !important;
   }
 </style>
+  </div>
+</main>

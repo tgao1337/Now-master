@@ -1,87 +1,91 @@
-<div align="center">
-  <h3>Current Tasks to Complete</h3>
-</div>
-<table class="fullTable mdl-data-table mdl-js-data-table mdl-shadow--2dp">
-  <thead>
-    <tr>
-      <th class="mdl-data-table__cell--non-numeric">Task</th>
-      <th>Due Date</th>
-      <th>Estimated Time</th>
-      <div align="center">
-        <th>Complete Task</th>
-      </div>
-    </tr>
-  </thead>
-  <tbody>
-    {{#each task as |task|}}
-    {{#unless task.completed}}
-    <tr>
-      <td class="mdl-data-table__cell--non-numeric"><a href="/tasks/{{task.id}}" class="urgency-{{task.urgency}} mdl-button mdl-js-button">{{task.task}}</a></td>
-      {{#if task.dueDate}}
-      <td>
-        {{task.dueDate}}
-      </td>
-      {{else}}
-      <td>unknown</td>
-      {{/if}}
-      <td>{{task.estimatedTime}} minutes</td>
-      <td>
-        <a href="/tasks/{{task.id}}/confirm" class="leftMove mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-           Complete Task
-        </a>
-      </td>
-    </tr>
-
-    {{/unless}}
-    {{/each}}
-  </tbody>
-</table>
+<main class="mdl-layout__content mdl-layout__tab-panel">
+  <div id="ft1"  class="page-content">
 
 
-<!-- <div align="center">
-  <h1>Current Tasks to Complete</h1>
-</div>
-<div id="flexcontainer" align="center">
-<div width="%60" class="container-list">
-  {{#each task as |task|}}
-    {{#unless task.completed}}
-      <div class="flex">
-        <div class="first" align="left">
-          <a href="/tasks/{{task.id}}/confirm" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-            Complete Task
-          </a>
-        </div>
-        <div class="second" align="center">
-          <a href="/tasks/{{task.id}}" class="mdl-button mdl-js-button">{{task.task}}</a>
-        </div>
+    <div align="center">
+      <h3>Current Tasks to Complete</h3>
+    </div>
+    <table class="fullTable mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+      <thead>
+        <tr>
+          <th class="mdl-data-table__cell--non-numeric">Task</th>
+          <th>Due Date</th>
+          <th>Estimated Time</th>
+          <div align="center">
+            <th>Complete Task</th>
+          </div>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each task as |task|}}
+        {{#unless task.completed}}
+        <tr>
+          <td class="mdl-data-table__cell--non-numeric"><a href="/tasks/{{task.id}}" class="urgency-{{task.urgency}} mdl-button mdl-js-button">{{task.task}}</a></td>
+          {{#if task.dueDate}}
+          <td>
+            {{task.dueDate}}
+          </td>
+          {{else}}
+          <td>unknown</td>
+          {{/if}}
+          <td>{{task.estimatedTime}} minutes</td>
+          <td>
+            <a href="/tasks/{{task.id}}/confirm" class="leftMove mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+              Complete Task
+            </a>
+          </td>
+        </tr>
 
-        {{#if task.dueDate}}
-        <div class="third" align="right">
-          <p>Due date: {{task.dueDate}}</p>
-        </div>
-        {{else}}
-        <div class="third" align="right">
-          <p>Due date: unknown</p>
-        </div>
-        {{/if}}
+        {{/unless}}
+        {{/each}}
+      </tbody>
+    </table>
 
-        <div class="third" align="right">
-          <p>Estimated Time: {{task.estimatedTime}} minutes</p>
-        </div>
-      </div>
-    {{/unless}}
-  {{/each}}
-</div>
 
-  <div align="center">
-    <!-- <a href="/completed" class="lg-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">View Completed Tasks</a> -->
+    <!-- <div align="center">
+    <h1>Current Tasks to Complete</h1>
   </div>
+  <div id="flexcontainer" align="center">
+  <div width="%60" class="container-list">
+  {{#each task as |task|}}
+  {{#unless task.completed}}
+  <div class="flex">
+  <div class="first" align="left">
+  <a href="/tasks/{{task.id}}/confirm" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+  Complete Task
+</a>
+</div>
+<div class="second" align="center">
+  <a href="/tasks/{{task.id}}" class="mdl-button mdl-js-button">{{task.task}}</a>
+</div>
+
+{{#if task.dueDate}}
+<div class="third" align="right">
+  <p>Due date: {{task.dueDate}}</p>
+</div>
+{{else}}
+<div class="third" align="right">
+  <p>Due date: unknown</p>
+</div>
+{{/if}}
+
+<div class="third" align="right">
+  <p>Estimated Time: {{task.estimatedTime}} minutes</p>
+</div>
+</div>
+{{/unless}}
+{{/each}}
+</div>
+
+<div align="center">
+  <!-- <a href="/completed" class="lg-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">View Completed Tasks</a> -->
+</div>
 </div>
 </div>
 <script>
   $("form").click(function(){
     function now() {
-    console.log('Click!');
+      console.log('Click!');
     }
     function wait() {
       document.getElementById("completed").submit();
@@ -157,3 +161,5 @@
     background-color: rgba(75,199,110,.2) !important;
   }
 </style>
+  </div>
+</main>
