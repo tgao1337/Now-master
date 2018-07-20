@@ -31,16 +31,59 @@ A user visits our website when they feel overwhelmed by upcoming white-collars t
 [What routes will we need? What will they do?]
 
 Index/Home
-<li> USE http://localhost:3000/</li>
+<li> POST http://localhost:3000/</li>
 <li> GET http://localhost:3000/</li>
 
-Users
+View Specific tasks
+<li> GET http://localhost:3000/tasks/:task.id</li>
+<li> POST http://localhost:3000/tasks/:task.id</li>
+
+Edit Specific tasks
+<li> GET http://localhost:3000/tasks/:task.id/edit</li>
+
+Confirm Completion of tasks
+<li> USE http://localhost:3000/tasks/:task.id/confirm</li>
+
+Update Completed Task
+<li> POST http://localhost:3000/tasks/:task.id</li>
+
+Login
 <li> GET http://localhost:3000/login</li>
 <li> POST http://localhost:3000/login</li>
+<li> GET http://localhost:3000/login/fail</li>
 
-Tasks
-<li> GET http://localhost:3000/tasks/task.id</li>
-<li> POST http://localhost:3000/tasks/task.id</li>
+Register
+<li> GET http://localhost:3000/users/new</li>
+<li> POST http://localhost:3000/users/new</li>
+<li> GET http://localhost:3000/users/new/confirm</li>
+<li> POST http://localhost:3000/users/new/confirm</li>
+<li> GET http://localhost:3000/users/new/format</li>
+<li> POST http://localhost:3000/users/new/format</li>
+<li> GET http://localhost:3000/users/new/taken</li>
+<li> POST http://localhost:3000/users/new/taken</li>
+
+Completed Tasks
+<li> GET http://localhost:3000/completed</li>
+
+Clear All Completed tasks
+<li> GET http://localhost:3000/deletecompletedconfirm</li>
+<li> POST http://localhost:3000/deletecompletedconfirm</li>
+
+View stars
+<li> GET http://localhost:3000/stars</li>
+
+Loading screen while Undoing Tasks
+<li> GET http://localhost:3000/undo/:task.id</li>
+
+Loading screen while deleting tasks
+<li> GET http://localhost:3000/deleted/:task.id</li>
+
+Delete Task Confirmation
+<li> GET http://localhost:3000/tasks/:task.id/delete</li>
+
+Create a new Task
+<li> GET http://localhost:3000/new</li>
+<li> POST http://localhost:3000/new</li>
 
 ## Other
 
