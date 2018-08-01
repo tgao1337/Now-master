@@ -1,7 +1,7 @@
 # NOW
 Now is a task management website where users estimate the required time to complete a white-collar task, deadline, and write positive and negative consequences for completing that task.
 
-This repository is a backup of the original at https://github.com/MatheMaddox/Now due to some merge problems. It should be fixed now.
+This repository is a broken version of the original at https://github.com/MatheMaddox/Now due to some merge problems. Please see the original repository for a working copy. Or revert commits.
 
 ## Audience
 The website targets individuals who task white-collar tasks longer than 1 hour on a daily basis. According to StudyMode, online education company, between 40 to 50% of college students procrastinate because the upcoming tasks feel overwhelming. Now caters to high-school, college and white-collar professionals because it requires users to break down tasks.
